@@ -131,19 +131,6 @@
     <dimen name="px100_font">36sp</dimen>
     <dimen name="px64_font">30sp</dimen>
 
-    <dimen name="px100_font_x">36sp</dimen>
-    <dimen name="px64_font_x">32sp</dimen>
-    <dimen name="px46_font_x">23sp</dimen>
-    <dimen name="px36_font_x">18sp</dimen>
-    <dimen name="px34_font_x">17sp</dimen>
-    <dimen name="px32_font_x">16sp</dimen>
-    <!--<dimen name="px30_font_x">15sp</dimen>-->
-    <!--<dimen name="px28_font_x">14sp</dimen>-->
-    <!--<dimen name="px26_font_x">13sp</dimen>-->
-    <!--<dimen name="px24_font_x">12sp</dimen>-->
-    <dimen name="px22_font_x">11sp</dimen>
-    <!--<dimen name="px20_font_x">10sp</dimen>-->
-    <dimen name="px16_font_x">8sp</dimen>
     <!-- 新型字体大小 -->
     <dimen name="px30_font_x">15sp</dimen>
     <dimen name="px28_font_x">14sp</dimen>
@@ -156,9 +143,6 @@
 
     <!-- 记录webview 宽 -->
     <dimen name="webview_image_width">340px</dimen>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
 
 
 </resources>

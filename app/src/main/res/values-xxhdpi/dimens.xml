@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- 720x1280 -->
+    <!-- 1080x1920 -->
     <dimen name="px3_h">1.5dp</dimen>
     <dimen name="px20_w">10dp</dimen>
-    <dimen name="px30_h">15dp</dimen>
     <dimen name="px12_w">6dp</dimen>
+    <dimen name="px30_h">15dp</dimen>
+    <dimen name="px60_w">30dp</dimen>
+    <dimen name="px15_h">8dp</dimen>
     <dimen name="px19_w">8.55dp</dimen>
     <dimen name="px155_h">77.5dp</dimen>
     <dimen name="px155_w">77.5dp</dimen>
-    <dimen name="px60_w">30dp</dimen>
-    <dimen name="px15_h">8dp</dimen>
     <dimen name="px10_h">5dp</dimen>
     <dimen name="px128_w">64dp</dimen>
     <dimen name="px128_h">64dp</dimen>
@@ -73,55 +73,52 @@
     <dimen name="px42_h">19dp</dimen>
     <dimen name="px120_h">56dp</dimen>
     <dimen name="px6_h">3dp</dimen>
+    <dimen name="px65_w">33dp</dimen>
     <dimen name="px12_h">6dp</dimen>
-    <dimen name="px65_w">29dp</dimen>
     <dimen name="px54_w">27dp</dimen>
     <dimen name="px160_w">80dp</dimen>
     <dimen name="px255_w">128dp</dimen>
     <dimen name="px22_w">11dp</dimen>
     <dimen name="px420_w">210dp</dimen>
     <!-- 新型px适配 -->
-    <dimen name="px19_w_x">9.6dp</dimen>
-    <dimen name="px19_h_x">9.6dp</dimen>
-    <dimen name="px17_h_x">8.5dp</dimen>
-    <dimen name="px27_h_x">13.4dp</dimen>
-    <dimen name="px13_h_x">6.5dp</dimen>
-    <dimen name="px14_h_x">6.9dp</dimen>
-    <dimen name="px2_h_x">1dp</dimen>
-    <dimen name="px21_w_x">10.4dp</dimen>
-    <dimen name="px22_w_x">11dp</dimen>
-    <dimen name="px23_h_x">11.5dp</dimen>
-    <dimen name="px29_w_x">14.4dp</dimen>
-    <dimen name="px16_w_x">8.2dp</dimen>
-    <dimen name="px9_h_x">4.4dp</dimen>
-    <dimen name="px10_h_x">4.8dp</dimen>
-    <dimen name="px49_h_x">24.5dp</dimen>
-    <dimen name="px57_h_x">28.8dp</dimen>
-    <dimen name="px84_h_x">41.8dp</dimen>
-    <dimen name="px35_h_x">17.4dp</dimen>
+    <!--<dimen name="px19_w_x">9.6dp</dimen>-->
+    <!--<dimen name="px19_h_x">9.6dp</dimen>-->
+    <!--<dimen name="px17_h_x">5.6dp</dimen>-->
+    <!--<dimen name="px27_h_x">13.4dp</dimen>-->
+    <!--<dimen name="px13_h_x">6.5dp</dimen>-->
+    <!--<dimen name="px14_h_x">6.9dp</dimen>-->
+    <!--<dimen name="px2_h_x">1dp</dimen>-->
+    <!--<dimen name="px21_w_x">10.4dp</dimen>-->
+    <!--<dimen name="px22_w_x">7.4dp</dimen>-->
+    <!--<dimen name="px23_h_x">7.7dp</dimen>-->
+    <!--<dimen name="px29_w_x">14.4dp</dimen>-->
+    <!--<dimen name="px16_w_x">8.2dp</dimen>-->
+    <!--<dimen name="px9_h_x">4.4dp</dimen>-->
+    <!--<dimen name="px10_h_x">3.2dp</dimen>-->
+    <!--<dimen name="px49_h_x">24.5dp</dimen>-->
+    <!--<dimen name="px84_h_x">41.8dp</dimen>-->
+    <!--<dimen name="px35_h_x">17.4dp</dimen>-->
+    <!--<dimen name="px20_w_x">9.6dp</dimen>-->
+    <!--<dimen name="px38_w_x">18dp</dimen>-->
+    <!--<dimen name="px18_w_x">5.9dp</dimen>-->
+    <!--<dimen name="px5_h_x">1.5dp</dimen>-->
+    <!--<dimen name="px6_w_x">2.1dp</dimen>-->
+    <!--<dimen name="px20_h_x">6.7dp</dimen>-->
+    <!--<dimen name="px57_h_x">19.2dp</dimen>-->
+    <!--<dimen name="px3_h_x">0.9dp</dimen>-->
+    <!--<dimen name="px1_h_x">0.3dp</dimen>-->
+    <!--<dimen name="px8_h_x">2.6dp</dimen>-->
+    <!--<dimen name="px247_h_x">82.2dp</dimen>-->
+    <!--<dimen name="px90_w_x">32dp</dimen>-->
 
-    <dimen name="px20_w_x">9.6dp</dimen>
-    <dimen name="px20_h_x">10.1dp</dimen>
-    <dimen name="px3_h_x">1.3dp</dimen>
-    <dimen name="px1_h_x">0.5dp</dimen>
-    <dimen name="px38_w_x">18dp</dimen>
-    <dimen name="px18_w_x">8.8dp</dimen>
-    <dimen name="px5_h_x">2.2dp</dimen>
-    <dimen name="px6_w_x">3.1dp</dimen>
-    <dimen name="px8_h_x">3.8dp</dimen>
-    <dimen name="px90_w_x">48dp</dimen>
-    <dimen name="px247_h_x">123.4dp</dimen>
-
-
-
-    <dimen name="px8_r_x">3.8dp</dimen>
+    <!--<dimen name="px8_r_x">3.8dp</dimen>-->
 
     <!-- 字体大小 -->
     <dimen name="px30_font">14sp</dimen>
-    <dimen name="px28_font">13sp</dimen>
-    <dimen name="px26_font">12sp</dimen>
     <dimen name="px24_font">12sp</dimen>
     <dimen name="px22_font">10sp</dimen>
+    <dimen name="px26_font">12sp</dimen>
+    <dimen name="px28_font">13sp</dimen>
     <dimen name="px36_font">17sp</dimen>
     <dimen name="px34_font">16sp</dimen>
     <dimen name="px32_font">15sp</dimen>
@@ -131,34 +128,17 @@
     <dimen name="px100_font">36sp</dimen>
     <dimen name="px64_font">30sp</dimen>
 
-    <dimen name="px100_font_x">36sp</dimen>
-    <dimen name="px64_font_x">32sp</dimen>
-    <dimen name="px46_font_x">23sp</dimen>
-    <dimen name="px36_font_x">18sp</dimen>
-    <dimen name="px34_font_x">17sp</dimen>
-    <dimen name="px32_font_x">16sp</dimen>
-    <!--<dimen name="px30_font_x">15sp</dimen>-->
+    <!-- 新型字体大小 -->
+    <!--<dimen name="px30_font_x">10sp</dimen>-->
     <!--<dimen name="px28_font_x">14sp</dimen>-->
     <!--<dimen name="px26_font_x">13sp</dimen>-->
-    <!--<dimen name="px24_font_x">12sp</dimen>-->
-    <dimen name="px22_font_x">11sp</dimen>
-    <!--<dimen name="px20_font_x">10sp</dimen>-->
-    <dimen name="px16_font_x">8sp</dimen>
-    <!-- 新型字体大小 -->
-    <dimen name="px30_font_x">15sp</dimen>
-    <dimen name="px28_font_x">14sp</dimen>
-
-    <dimen name="px28_font_linespace_x">6.9dp</dimen>
-    <dimen name="px26_font_x">13sp</dimen>
-    <dimen name="px24_font_x">12sp</dimen>
-    <dimen name="px20_font_x">10sp</dimen>
-
-
     <!-- 记录webview 宽 -->
     <dimen name="webview_image_width">340px</dimen>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <!--<dimen name="px24_font_x">8sp</dimen>-->
+    <!--<dimen name="px20_font_x">6.7sp</dimen>-->
 
+    <dimen name="px450_h_x">225.6dp</dimen>
+    <dimen name="px150_h_x">52.8dp</dimen>
+    <dimen name="px113_h_x">56.6dp</dimen>
 </resources>
