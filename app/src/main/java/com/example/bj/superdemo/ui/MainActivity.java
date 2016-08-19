@@ -1,6 +1,7 @@
 package com.example.bj.superdemo.ui;
 
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,5 +19,11 @@ public class MainActivity extends BaseActivity {
         tv_username = (TextView) mMeanuView.findViewById(R.id.tv_username);
         tv_id = (TextView) mMeanuView.findViewById(R.id.tv_id);
         user_image = (ImageView) mMeanuView.findViewById(R.id.user_image);
+
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }
