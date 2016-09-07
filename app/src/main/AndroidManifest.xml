@@ -18,12 +18,18 @@
         </activity>
         <activity
             android:name=".ui.MainActivity"
-            android:label="@string/title_activity_splash"></activity>
-        <meta-data android:name="design_width" android:value="1080">
-        </meta-data>
-        <meta-data android:name="design_height" android:value="1920">
-        </meta-data>
-    </application>
+            android:label="@string/title_activity_splash" />
 
+        <meta-data
+            android:name="design_width"
+            android:value="1080"></meta-data>
+        <meta-data
+            android:name="design_height"
+            android:value="1920"></meta-data>
+
+        <activity
+            android:name=".ui.Main2Activity"
+            android:label="@string/title_activity_main2"></activity>
+    </application>
 
 </manifest>

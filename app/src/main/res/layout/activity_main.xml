@@ -27,11 +27,12 @@
             android:text="HelloWorld"
             android:textSize="40px" />
         <Button
+            android:id="@+id/btn_demo"
             android:text="demo"
             android:textSize="30px"
             android:background="@color/main_color"
             android:layout_width="700px"
-            android:layout_height="40px" />
+            android:layout_height="100px" />
         <Button
             android:background="@color/black"
             android:layout_width="350px"
