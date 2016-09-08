@@ -34,6 +34,8 @@
             android:layout_width="700px"
             android:layout_height="100px" />
         <Button
+            android:id="@+id/btn_demoa"
+            android:text="a"
             android:background="@color/black"
             android:layout_width="350px"
             android:layout_height="80px" />

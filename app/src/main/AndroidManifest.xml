@@ -22,14 +22,18 @@
 
         <meta-data
             android:name="design_width"
-            android:value="1080"></meta-data>
+            android:value="1080" />
         <meta-data
             android:name="design_height"
-            android:value="1920"></meta-data>
+            android:value="1920" />
 
         <activity
             android:name=".ui.Main2Activity"
-            android:label="@string/title_activity_main2"></activity>
+            android:label="@string/title_activity_main2" />
+        <activity
+            android:name=".ui.Main3Activity"
+            android:label="@string/title_activity_main3" />
+        <activity android:name=".ui.customview.ViewPagerActivity"></activity>
     </application>
 
 </manifest>

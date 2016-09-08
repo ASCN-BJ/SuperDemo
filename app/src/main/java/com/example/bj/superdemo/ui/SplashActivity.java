@@ -27,9 +27,10 @@ public class SplashActivity extends BaseActivity {
     @Override
     public void onClick(View view) {
         if (view.getId()==R.id.login){
-            if (user.getText().toString().trim().equals("123")&&pwd.getText().toString().trim().equals("123")){
-                startActivity(new Intent(this,MainActivity.class));
-            }
+//            if (user.getText().toString().trim().equals("123")&&pwd.getText().toString().trim().equals("123")){
+//                startActivity(new Intent(this,MainActivity.class));
+//            }
+            startActivity(new Intent(this,MainActivity.class));
             WindowManager wm = this.getWindowManager();
             int width = wm.getDefaultDisplay().getWidth();
             int height = wm.getDefaultDisplay().getHeight();

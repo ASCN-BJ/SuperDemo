@@ -21,15 +21,16 @@
 
         <EditText
             android:id="@+id/user"
+
             android:layout_width="match_parent"
             android:layout_height="@dimen/px100_h"
-            android:hint="请输入账号" />
+            android:hint="123" />
 
         <EditText
             android:id="@+id/pwd"
             android:layout_width="match_parent"
             android:layout_height="@dimen/px100_h"
-            android:hint="请输入密码" />
+            android:hint="123" />
 
         <Button
             android:id="@+id/login"
