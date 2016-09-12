@@ -33,7 +33,15 @@
         <activity
             android:name=".ui.Main3Activity"
             android:label="@string/title_activity_main3" />
-        <activity android:name=".ui.customview.ViewPagerActivity"></activity>
+        <activity android:name=".ui.customview.ViewPagerActivity" />
+        <activity android:name=".ui.customview.BigMapActivity" />
+        <activity android:name=".ui.customview.view_ui.CustomViewActivityRect" />
+        <activity
+            android:name=".ui.customview.eventbus.EventBusDemo"
+            android:label="@string/title_activity_event_bus_demo" />
+        <activity
+            android:name=".ui.customview.eventbus.EventBusDemoB"
+            android:label="@string/title_activity_event_bus_demo_b"></activity>
     </application>
 
 </manifest>

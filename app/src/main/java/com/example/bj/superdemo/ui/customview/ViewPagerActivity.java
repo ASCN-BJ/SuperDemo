@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.bj.superdemo.R;
 import com.example.bj.superdemo.ui.BaseActivity;
@@ -14,12 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 一個ViewPager的demo
+ * description:一個ViewPager的demo
  */
 public class ViewPagerActivity extends BaseActivity {
     private ViewPager vp_normal;
     private ViewPager vp_second;
-    private int[] imageViews=new int[]{R.drawable.bg,R.drawable.fengjing1,R.drawable.fenjing2};
+    private int[] imageViews=new int[]{R.drawable.bg,R.drawable.fengjing1,R.drawable.fenjing2,R.drawable.dvq};//,R.drawable.dvq
     private List<ImageView> mImageViews = new ArrayList<ImageView>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +29,8 @@ public class ViewPagerActivity extends BaseActivity {
         vp_normal= (ViewPager) findViewById(R.id.vp_normal);
         vp_second= (ViewPager) findViewById(R.id.vp_second);
         vp_normal.setPageMargin(30);
-        //vp_normal.setOffscreenPageLimit(3);
-      //  vp_normal.setPageTransformer(true,new AlphaPageTransformer());
+//        vp_normal.setOffscreenPageLimit(3);
+       vp_normal.setPageTransformer(true,new AlphaPageTransformer());
 
         initV();
         vp_normal.setAdapter(new NormalViewPagerAdapter(mImageViews));
@@ -63,7 +64,7 @@ public class ViewPagerActivity extends BaseActivity {
             if (position<-1){//在pager的左面
                 page.setPivotX(page.getWidth()/2);
                 page.setPivotY(page.getHeight());
-                page.setRotation(position*mMaxRotate);
+                page.setRotation(position*180f);
 
                 page.setAlpha(mMinAlpha);//渐变动画
             }else if (position>=-1&&position<0){
@@ -81,7 +82,7 @@ public class ViewPagerActivity extends BaseActivity {
             }else {
                 page.setPivotX(page.getWidth()/2);
                 page.setPivotY(page.getHeight());
-                page.setRotation(mMaxRotate*position);
+                page.setRotation(180f*position);
 
                 page.setAlpha(mMinAlpha);
             }
@@ -110,32 +111,37 @@ public class ViewPagerActivity extends BaseActivity {
         public boolean isViewFromObject(View view, Object object) {
             return view==object;
         }
-private int count=-1;
+
+        /**
+         * 初始化一个实例的时候不要在外面new 一个对象的数组， 应该是在里面new一个对象，因为ViewPager没有办法remove掉在数组中new出来的对象
+         * @param container
+         * @param position
+         * @return
+         */
         @Override
-        public Object instantiateItem(ViewGroup container, int position) {
+        public Object instantiateItem(ViewGroup container, final int position) {
+//            if((ViewPager)list.get(position%list.size()).getParent()!=null){
+//                ((ViewPager) list.get(position % list.size())
+//                        .getParent()).removeView(list.get(position
+//                        % list.size()));
+//            }
+//            container.getChildCount();
+//            container.addView(list.get(position % list.size()));
+//            Toast.makeText(container.getContext(),container.getChildCount()+"" ,Toast.LENGTH_SHORT).show();
+//            System.out.println("instantiateItem"+position+"----");
+            ImageView view = new ImageView(ViewPagerActivity.this);
+            view.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            view.setImageResource(imageViews[position % list.size()]);
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(ViewPagerActivity.this,"postion"+position,Toast.LENGTH_SHORT).show();
+                }
+            });
 
-
-//if(count-position==list.size()-1)
-//
-//
-//            if(count> position)
-//                if(container.getChildAt(position % list.size()+1)!=null)
-//                    container.removeViewAt(position % list.size()+1);
-//                else  if(count< position)
-//                    if(container.getChildAt(position % list.size()-1)!=null)
-//                        container.removeViewAt(position % list.size()-1);
-
-
-            if((ViewPager)list.get(position%list.size()).getParent()!=null){
-             }
-
-
-            count=position;
-
-
-            container.addView(list.get(position % list.size()));
-            System.out.println("instantiateItem"+position+"----");
-            return list.get(position % list.size());
+            container.addView(view);
+            return view;
+            //return list.get(position % list.size());
 //            container.addView(list.get(position % list.size()));
 //            return list.get(position % list.size());
         }
@@ -143,10 +149,11 @@ private int count=-1;
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
+//            super.destroyItem(container,position,object);
 //            System.out.println("destroyItem"+position+"----");
 //            container.removeView(list.get(position % list.size()));
 //            container.removeView(list.get(position % list.size()));
-            container.removeView((View) object);
+           container.removeView((View) object);
         }
     }
     private void initV(){

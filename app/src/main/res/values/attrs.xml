@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomViewBase">
+        <attr name="TitleText" format="string" />
+        <attr name="TitleTextColor" format="color" />
+        <attr name="TitleTextSize" format="dimension" />
+    </declare-styleable>
+</resources>

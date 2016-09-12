@@ -46,7 +46,7 @@ public class MainActivity extends BaseActivity {
                 EventBus.getDefault().post(new MessageEvent(12580));
                 break;
             case R.id.btn_demoa:
-                startActivity(new Intent(this,ViewPagerActivity.class));
+                startActivity(new Intent(this,Main3Activity.class));
                 break;
             default:
                 break;

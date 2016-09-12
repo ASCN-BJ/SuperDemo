@@ -6,16 +6,18 @@ package com.example.bj.superdemo.ui.bean;
 public class MessageEvent {
     private int dataInt;
     private Object dataObj;
-    private int dataString;
+    private String dataString;
 
-    public MessageEvent(int dataInt, Object dataObj, int dataString) {
+    public MessageEvent(int dataInt, Object dataObj, String dataString) {
         this.dataInt = dataInt;
         this.dataObj = dataObj;
         this.dataString = dataString;
     }
+
     public MessageEvent() {
 
     }
+
     public MessageEvent(int dataInt) {
 
         this.dataInt = dataInt;
@@ -37,11 +39,11 @@ public class MessageEvent {
         this.dataObj = dataObj;
     }
 
-    public int getDataString() {
+    public String getDataString() {
         return dataString;
     }
 
-    public void setDataString(int dataString) {
+    public void setDataString(String dataString) {
         this.dataString = dataString;
     }
 }
