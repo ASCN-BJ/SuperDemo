@@ -5,4 +5,15 @@
         <attr name="TitleTextColor" format="color" />
         <attr name="TitleTextSize" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="CustomViewBase2">
+        <attr name="TitleTexts" format="string" />
+        <attr name="TitleTextColors" format="color" />
+        <attr name="TitleTextSizes" format="dimension" />
+        <attr name="ImageSrcs" format="reference" />
+        <attr name="imageScaleTypes" format="enum">
+            <enum name="fitXys" value="0" />
+            <enum name="centers" value="1" />
+        </attr>
+    </declare-styleable>
 </resources>

@@ -19,6 +19,7 @@ public class EventBusDemo extends BaseActivity {
 
     private TextView tv_show_data;
     private Button btn_show_data_a;
+    private Button btn_show_data_delay;
 
     @Override
     protected void onStart() {
@@ -32,6 +33,9 @@ public class EventBusDemo extends BaseActivity {
         tv_show_data = (TextView) findViewById(R.id.tv_show_data);
         btn_show_data_a = (Button) findViewById(R.id.btn_show_data_a);
         btn_show_data_a.setOnClickListener(this);
+        btn_show_data_delay = (Button) findViewById(R.id.btn_show_data_delay);
+        btn_show_data_delay.setOnClickListener(this);
+        this.findViewById(R.id.btn_show_data_sticky).setOnClickListener(this);
     }
 
     /**
@@ -51,6 +55,13 @@ public class EventBusDemo extends BaseActivity {
                 MessageEvent event = new MessageEvent();
                 event.setDataString("我怕，恶魔");
                 EventBus.getDefault().post(event);
+                break;
+            case R.id.btn_show_data_sticky:
+                MessageEvent eventDelay = new MessageEvent();
+                eventDelay.setDataString("我好怕怕");
+                EventBus.getDefault().postSticky(eventDelay);
+                break;
+            case R.id.btn_show_data_delay:
                 break;
             default:
                 break;

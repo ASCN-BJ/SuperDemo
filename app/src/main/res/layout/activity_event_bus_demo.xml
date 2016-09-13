@@ -22,10 +22,17 @@
         android:layout_height="200px"
         android:text="同一个页面显示数据" />
 
+
+    <Button
+        android:id="@+id/btn_show_data_delay"
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:text="延迟" />
+
     <Button
         android:id="@+id/btn_show_data_sticky"
         android:layout_width="match_parent"
         android:layout_height="200px"
-        android:text="不同activity传递数据" />
+        android:text="stickey" />
 
 </LinearLayout>
