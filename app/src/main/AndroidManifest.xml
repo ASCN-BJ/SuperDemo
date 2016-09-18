@@ -41,7 +41,10 @@
             android:label="@string/title_activity_event_bus_demo" />
         <activity
             android:name=".ui.customview.eventbus.EventBusDemoB"
-            android:label="@string/title_activity_event_bus_demo_b"></activity>
+            android:label="@string/title_activity_event_bus_demo_b" />
+        <activity
+            android:name=".ui.customview.view_ui.DragLeftDeleteListActivity"
+            android:label="@string/title_activity_drag_left_delete_list"></activity>
     </application>
 
 </manifest>

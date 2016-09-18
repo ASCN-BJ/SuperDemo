@@ -14,6 +14,7 @@ import com.example.bj.superdemo.ui.customview.BigMapActivity;
 import com.example.bj.superdemo.ui.customview.ViewPagerActivity;
 import com.example.bj.superdemo.ui.customview.eventbus.EventBusDemo;
 import com.example.bj.superdemo.ui.customview.view_ui.CustomViewActivityRect;
+import com.example.bj.superdemo.ui.customview.view_ui.DragLeftDeleteListActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -23,6 +24,7 @@ public class Main3Activity extends BaseActivity {
     private TextView tv_my_view_pager;
     private TextView iv_viewp;
     private TextView tv_event_bus_demo;
+    private TextView tv_delete_list;
 
     public void initData() {
         setContentView(R.layout.activity_main3);
@@ -34,6 +36,7 @@ public class Main3Activity extends BaseActivity {
         findViewById(R.id.tv_custom_rect).setOnClickListener(this);
         tv_event_bus_demo = (TextView) findViewById(R.id.tv_event_bus_demo);
         tv_event_bus_demo.setOnClickListener(this);
+        findViewById(R.id.tv_delete_list).setOnClickListener(this);
         EventBus.getDefault().register(this);
     }
 
@@ -51,6 +54,9 @@ public class Main3Activity extends BaseActivity {
                 break;
             case R.id.tv_event_bus_demo:
                 startActivity(new Intent(this, EventBusDemo.class));
+                break;
+            case R.id.tv_delete_list:
+                startActivity(new Intent(this, DragLeftDeleteListActivity.class));
                 break;
             default:
                 break;

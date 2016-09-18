@@ -11,25 +11,73 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.bj.superdemo.ui.customview.view_ui.CustomViewActivityRect">
 
-    <com.example.bj.superdemo.ui.customview.subject.CustomViewBase
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="50px"
-        app:TitleText="HelloWorld"
-        app:TitleTextColor="@android:color/tertiary_text_dark"
-        app:TitleTextSize="20sp" />
+    <!--<ScrollView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
 
-    <com.example.bj.superdemo.ui.customview.subject.CustomViewBase2
-        android:layout_width="500px"
-        android:layout_height="300px"
-        app:ImageSrcs="@drawable/fengjing1"
-        app:TitleTextColors="@android:color/tertiary_text_dark"
-        app:TitleTextSizes="20sp"
-        app:TitleTexts="HelloWorldssssssssssshhhh sssssssssssssssssssssssssssssssssssssssss "
-        app:imageScaleTypes="fitXys" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <com.example.bj.superdemo.ui.customview.subject.CustomViewDrawCircle
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <com.example.bj.superdemo.ui.customview.subject.CustomViewBase
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="50px"
+            app:TitleText="HelloWorld"
+            app:TitleTextColor="@android:color/tertiary_text_dark"
+            app:TitleTextSize="20sp" />
 
+        <com.example.bj.superdemo.ui.customview.subject.CustomViewBase2
+            android:layout_width="500px"
+            android:layout_height="300px"
+            app:ImageSrcs="@drawable/fengjing1"
+            app:TitleTextColors="@android:color/tertiary_text_dark"
+            app:TitleTextSizes="20sp"
+            app:TitleTexts="HelloWorldssssssssssshhhh sssssssssssssssssssssssssssssssssssssssss "
+            app:imageScaleTypes="fitXys" />
+
+        <com.example.bj.superdemo.ui.customview.subject.CustomViewDrawCircle
+            android:id="@+id/cdc_view"
+            android:layout_width="720px"
+            android:layout_height="800px" />
+
+        <com.example.bj.superdemo.ui.customview.subject.CusomViewDragHelper
+            android:id="@+id/cdh_view"
+            android:layout_width="match_parent"
+            android:layout_height="800px"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_the_first"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="#44ff0000"
+                android:gravity="center"
+                android:text="I can be dragged !" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="#44ff0000"
+                android:gravity="center"
+                android:text="I can be dragged !" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="#44ff0000"
+                android:gravity="center"
+                android:text="I can be dragged !" />
+
+
+        </com.example.bj.superdemo.ui.customview.subject.CusomViewDragHelper>
+
+
+    </LinearLayout>
+
+    <!--</ScrollView>-->
 </LinearLayout>
