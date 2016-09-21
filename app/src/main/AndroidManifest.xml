@@ -44,7 +44,14 @@
             android:label="@string/title_activity_event_bus_demo_b" />
         <activity
             android:name=".ui.customview.view_ui.DragLeftDeleteListActivity"
-            android:label="@string/title_activity_drag_left_delete_list"></activity>
+            android:label="@string/title_activity_drag_left_delete_list" />
+        <activity android:name=".ui.customview.view_ui.VeticalLayoutActivity" />
+        <activity
+            android:name=".ui.customview.view_ui.ShapeDemoActivity"
+            android:label="@string/title_activity_shape_demo" />
+        <activity
+            android:name=".ui.customview.view_ui.GestureLockActivity"
+            android:label="@string/title_activity_gesture_lock"></activity>
     </application>
 
 </manifest>

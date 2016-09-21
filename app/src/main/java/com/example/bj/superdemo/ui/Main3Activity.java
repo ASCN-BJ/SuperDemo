@@ -13,8 +13,12 @@ import com.example.bj.superdemo.ui.bean.MessageEvent;
 import com.example.bj.superdemo.ui.customview.BigMapActivity;
 import com.example.bj.superdemo.ui.customview.ViewPagerActivity;
 import com.example.bj.superdemo.ui.customview.eventbus.EventBusDemo;
+import com.example.bj.superdemo.ui.customview.subject.CustomViewDrawShape;
 import com.example.bj.superdemo.ui.customview.view_ui.CustomViewActivityRect;
 import com.example.bj.superdemo.ui.customview.view_ui.DragLeftDeleteListActivity;
+import com.example.bj.superdemo.ui.customview.view_ui.GestureLockActivity;
+import com.example.bj.superdemo.ui.customview.view_ui.ShapeDemoActivity;
+import com.example.bj.superdemo.ui.customview.view_ui.VeticalLayoutActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -37,6 +41,9 @@ public class Main3Activity extends BaseActivity {
         tv_event_bus_demo = (TextView) findViewById(R.id.tv_event_bus_demo);
         tv_event_bus_demo.setOnClickListener(this);
         findViewById(R.id.tv_delete_list).setOnClickListener(this);
+        findViewById(R.id.tv_vertical_layout).setOnClickListener(this);
+        findViewById(R.id.tv_dmeo_shape).setOnClickListener(this);
+        findViewById(R.id.tv_gesture_lock).setOnClickListener(this);
         EventBus.getDefault().register(this);
     }
 
@@ -57,6 +64,15 @@ public class Main3Activity extends BaseActivity {
                 break;
             case R.id.tv_delete_list:
                 startActivity(new Intent(this, DragLeftDeleteListActivity.class));
+                break;
+            case R.id.tv_vertical_layout:
+                startActivity(new Intent(this, VeticalLayoutActivity.class));
+                break;
+            case R.id.tv_dmeo_shape:
+                startActivity(new Intent(this, ShapeDemoActivity.class));
+                break;
+            case R.id.tv_gesture_lock:
+                startActivity(new Intent(this, GestureLockActivity.class));
                 break;
             default:
                 break;

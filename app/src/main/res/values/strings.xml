@@ -9,4 +9,6 @@
     <string name="title_activity_event_bus_demo">EventBusDemo</string>
     <string name="title_activity_event_bus_demo_b">EventBusDemoB</string>
     <string name="title_activity_drag_left_delete_list">DragLeftDeleteListActivity</string>
+    <string name="title_activity_shape_demo">ShapeDemoActivity</string>
+    <string name="title_activity_gesture_lock">GestureLockActivity</string>
 </resources>

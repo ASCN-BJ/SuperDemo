@@ -63,5 +63,35 @@
             android:text="左拉删除List"
             android:textSize="28px" />
 
+        <TextView
+            android:id="@+id/tv_vertical_layout"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:layout_marginTop="100px"
+            android:background="@color/shallow_blue"
+            android:gravity="center"
+            android:text="竖直滚动布局"
+            android:textSize="28px" />
+
+        <TextView
+            android:id="@+id/tv_dmeo_shape"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:layout_marginTop="100px"
+            android:background="@color/shallow_blue"
+            android:gravity="center"
+            android:text="画形状"
+            android:textSize="28px" />
+
+        <TextView
+            android:id="@+id/tv_gesture_lock"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:layout_marginTop="100px"
+            android:background="@color/shallow_blue"
+            android:gravity="center"
+            android:text="手势解锁"
+            android:textSize="28px" />
+
     </LinearLayout>
 </ScrollView>
