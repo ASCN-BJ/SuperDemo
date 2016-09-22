@@ -27,8 +27,6 @@ public class GestureLockView extends View {
     private int mWrongColor = getResources().getColor(R.color.red);
     private Paint mPaint;
     private int mRaius;
-    private int mWidth;
-    private int mHeight;
     /**
      * 圆心坐标x
      */
@@ -68,12 +66,12 @@ public class GestureLockView extends View {
         mRaX = mWidth / 2;
         mRaY = mWidth / 2;
         mRaius = mRaX / 4;
-//        setMeasuredDimension(mWidth,mHeight);
 
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
         switch (mCurrentMode) {
             case STATUS_NO_FINGER:
                 mPaint.setColor(mNormalColor);
@@ -90,7 +88,7 @@ public class GestureLockView extends View {
                 canvas.drawCircle(mRaX, mRaY, mRaX - 4, mPaint);
                 break;
         }
-//        super.onDraw(canvas);
+
     }
 
     private void initData(Context context) {

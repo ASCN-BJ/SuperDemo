@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.bj.superdemo.R;
 
@@ -39,6 +40,8 @@ public class GestureLockViewGroup extends RelativeLayout {
     private int mLastPathX;
     private int mLastPathY;
     private Point mTmpTarget = new Point();
+    private List<Integer> specificGesture;
+    private JudgeGestureListner judgeListner;
 
     public GestureLockViewGroup(Context context) {
         super(context);
@@ -120,7 +123,7 @@ public class GestureLockViewGroup extends RelativeLayout {
             case MotionEvent.ACTION_MOVE:
                 GestureLockView lockView = getChildOnPot(x, y);
                 mPaint.setColor(Color.BLUE);
-                mPaint.setStrokeWidth(20);
+                mPaint.setStrokeWidth(40);
                 //set the alpha component [0..255] of the paint's color.
                 mPaint.setAlpha(50);
                 if (lockView != null) {
@@ -129,14 +132,21 @@ public class GestureLockViewGroup extends RelativeLayout {
                         mChooser.add(id);
                         mLastPathX = lockView.getLeft() / 2 + lockView.getRight() / 2;
                         mLastPathY = lockView.getTop() / 2 + lockView.getBottom() / 2;
+                        lockView.setMode(GestureLockView.Mode.STATUS_FINGER_ON);
                         if (mChooser.size() >= 2) {
-                            int endId = mChooser.get(mChooser.size());
-                            int startId = mChooser.get(mChooser.size() - 1);
+                            int endId = mChooser.get(mChooser.size() - 1);
+                            int startId = mChooser.get(mChooser.size() - 2);
                             GestureLockView endView = getGestureViewById(endId);
                             GestureLockView startView = getGestureViewById(startId);
-                            int middleX = ((endView.getLeft() + endView.getWidth() / 2) - (startView.getLeft() + startView.getWidth() / 2));//// TODO: 2016/9/22 修改
+                            int middleX = ((endView.getLeft() / 2 + endView.getRight() / 2) + (startView.getLeft() / 2 + startView.getRight() / 2)) / 2;
+                            int middleY = ((endView.getTop() / 2 + endView.getBottom() / 2) + (startView.getTop() / 2 + startView.getBottom() / 2)) / 2;
+                            GestureLockView glk = getChildOnPot(middleX, middleY);
+                            if (glk != null && glk instanceof GestureLockView) {
+                                glk.setMode(GestureLockView.Mode.STATUS_FINGER_ON);
+                                mChooser.set(mChooser.size() - 1, glk.getId());
+                                mChooser.add(endId);
+                            }
                         }
-                        lockView.setMode(GestureLockView.Mode.STATUS_FINGER_ON);
                         if (mChooser.size() == 1) {
                             //说明触摸的是第一个
                             mPath.moveTo(mLastPathX, mLastPathY);
@@ -153,8 +163,16 @@ public class GestureLockViewGroup extends RelativeLayout {
                 mTmpTarget.x = mLastPathX;
                 mTmpTarget.y = mLastPathY;
                 changeItemMode();
+                if (specificGesture != null && !specificGesture.isEmpty() && !mChooser.isEmpty()) {
+                    if (judgeListner != null) {
+                        if (JudgeResult(specificGesture, mChooser)) {
+                            judgeListner.getGestureJudgeResult(true);
+                        } else {
+                            judgeListner.getGestureJudgeResult(false);
+                        }
+                    }
 
-
+                }
                 break;
         }
         invalidate();
@@ -170,11 +188,44 @@ public class GestureLockViewGroup extends RelativeLayout {
         return null;
     }
 
+    /**
+     * 设定指定值的手势
+     */
+    public void setGestureLock(List<Integer> lists) {
+        this.specificGesture = lists;
+    }
+
+    public interface JudgeGestureListner {
+        void getGestureJudgeResult(boolean result);
+    }
+
+    /**
+     * 设置回调接口
+     *
+     * @param judgeListner
+     */
+    public void setJudgeListner(JudgeGestureListner judgeListner) {
+        this.judgeListner = judgeListner;
+    }
+
+
+    //校验结果
+    private boolean JudgeResult(List<Integer> listsA, List<Integer> listsB) {
+        boolean flag = true;
+        if (listsA.size() == listsB.size()) {
+            for (int x = 0; x < listsA.size(); x++) {
+                if (listsA.get(x) != listsB.get(x)) {
+                    flag = false;
+                }
+            }
+            return flag;
+        }
+        return false;
+    }
+
+
     private void changeItemMode() {
         for (GestureLockView gestureLockView : gestureLockViews) {
-//            if (mChooser.contains(gestureLockView.getId())) {
-//                gestureLockView.setMode(GestureLockView.Mode.STATUS_FINGER_UP);
-//            }
             gestureLockView.setMode(GestureLockView.Mode.STATUS_FINGER_UP);
         }
     }
