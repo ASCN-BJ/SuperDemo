@@ -1,25 +1,44 @@
 package com.example.bj.superdemo.ui.customview.subject.gesturelock;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Point;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.RelativeLayout;
+
+import com.example.bj.superdemo.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by bj on 2016/9/21.
- * description：手势锁屏，默认九个
+ * description：手势锁屏，默认九个,这个地方的id值设置的比较简单，如果需要怕重复的话，可以在Value文件中添加自定义的id值
  */
 public class GestureLockViewGroup extends RelativeLayout {
     private int mChildCount = 9;
     private int mHeight;
     private int mWidth;
-    private GestureLockView[] gestureLockViews = new GestureLockView[9];
+    private GestureLockView[] gestureLockViews;
     private int mGestureLockViewWidth;
     private int mMarginBetweenLockView;
     /**
      * 行数、列数的个数
      */
     private int mCount = 3;
+
+    private Path mPath;
+    private Paint mPaint;
+    private List<Integer> mChooser = new ArrayList<>();
+    private int mLastPathX;
+    private int mLastPathY;
+    private Point mTmpTarget = new Point();
 
     public GestureLockViewGroup(Context context) {
         super(context);
@@ -37,7 +56,13 @@ public class GestureLockViewGroup extends RelativeLayout {
     }
 
     private void initData(Context context) {
-
+        mPath = new Path();
+        mPaint = new Paint();//Paint.ANTI_ALIAS_FLAG
+        mPaint.setAntiAlias(true);
+        mPaint.setStrokeWidth(10);
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeCap(Paint.Cap.ROUND);
+        mPaint.setStrokeJoin(Paint.Join.ROUND);
     }
 
     @Override
@@ -49,35 +74,148 @@ public class GestureLockViewGroup extends RelativeLayout {
         mGestureLockViewWidth = (int) (4 * mWidth * 1.0f / (5 * mChildCount + 1));
         //计算每个GestureLockView的间距
         mMarginBetweenLockView = (int) ((mWidth - mGestureLockViewWidth * mCount) / (mCount + 1));
-//        int topMagrin = mMarginBetweenLockView;
-//        int rightMargin = mMarginBetweenLockView;
+        setMeasuredDimension(mWidth, mHeight);
         //初始化gestureLockView
-        for (int x = 0; x < mChildCount; x++) {
-            gestureLockViews[x] = new GestureLockView(getContext());
-            gestureLockViews[x].setId(x + 1);
-            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(mGestureLockViewWidth, mGestureLockViewWidth);
-            if (x % mCount != 0) {
-                layoutParams.addRule(RelativeLayout.RIGHT_OF, gestureLockViews[x - 1].getId());
-            }
-            if (x > mCount - 1) {
-                layoutParams.addRule(RelativeLayout.BELOW, gestureLockViews[x - mCount].getId());
-            }
-            int rightMargin = mMarginBetweenLockView;
-            int bottomMargin = mMarginBetweenLockView;
-            int leftMagin = 0;
-            int topMargin = 0;
-            if (x >= 0 && x < mCount) {
-                topMargin = mMarginBetweenLockView;
-            }
-            if (x % mCount == 0) {
-                leftMagin = mMarginBetweenLockView;
-            }
-            layoutParams.setMargins(leftMagin, topMargin, rightMargin,
-                    bottomMargin);
-            addView(gestureLockViews[x], layoutParams);
-        }
 
+        if (gestureLockViews == null) {
+            gestureLockViews = new GestureLockView[9];
+            for (int x = 0; x < mChildCount; x++) {
+                gestureLockViews[x] = new GestureLockView(getContext());
+                gestureLockViews[x].setId(x + 1);
+                gestureLockViews[x].measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+
+                RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(mGestureLockViewWidth, mGestureLockViewWidth);
+                if (x % mCount != 0) {
+                    layoutParams.addRule(RelativeLayout.RIGHT_OF, gestureLockViews[x - 1].getId());
+                }
+                if (x > mCount - 1) {
+                    layoutParams.addRule(RelativeLayout.BELOW, gestureLockViews[x - mCount].getId());
+                }
+                int rightMargin = mMarginBetweenLockView;
+                int bottomMargin = mMarginBetweenLockView;
+                int leftMagin = 0;
+                int topMargin = 0;
+                if (x >= 0 && x < mCount) {
+                    topMargin = mMarginBetweenLockView;
+                }
+                if (x % mCount == 0) {
+                    leftMagin = mMarginBetweenLockView;
+                }
+                layoutParams.setMargins(leftMagin, topMargin, rightMargin,
+                        bottomMargin);
+//            gestureLockViews[x].setMode(GestureLockView.Mode.STATUS_NO_FINGER);
+                this.addView(gestureLockViews[x], layoutParams);
+            }
+        }
     }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int x = (int) event.getX();
+        int y = (int) event.getY();
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                reset();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                GestureLockView lockView = getChildOnPot(x, y);
+                mPaint.setColor(Color.BLUE);
+                mPaint.setStrokeWidth(20);
+                //set the alpha component [0..255] of the paint's color.
+                mPaint.setAlpha(50);
+                if (lockView != null) {
+                    int id = lockView.getId();
+                    if (!mChooser.contains(id)) {
+                        mChooser.add(id);
+                        mLastPathX = lockView.getLeft() / 2 + lockView.getRight() / 2;
+                        mLastPathY = lockView.getTop() / 2 + lockView.getBottom() / 2;
+                        if (mChooser.size() >= 2) {
+                            int endId = mChooser.get(mChooser.size());
+                            int startId = mChooser.get(mChooser.size() - 1);
+                            GestureLockView endView = getGestureViewById(endId);
+                            GestureLockView startView = getGestureViewById(startId);
+                            int middleX = ((endView.getLeft() + endView.getWidth() / 2) - (startView.getLeft() + startView.getWidth() / 2));//// TODO: 2016/9/22 修改
+                        }
+                        lockView.setMode(GestureLockView.Mode.STATUS_FINGER_ON);
+                        if (mChooser.size() == 1) {
+                            //说明触摸的是第一个
+                            mPath.moveTo(mLastPathX, mLastPathY);
+                        } else {
+                            mPath.lineTo(mLastPathX, mLastPathY);
+                        }
+                    }
+                }
+                // 指引线的终点
+                mTmpTarget.x = x;
+                mTmpTarget.y = y;
+                break;
+            case MotionEvent.ACTION_UP:
+                mTmpTarget.x = mLastPathX;
+                mTmpTarget.y = mLastPathY;
+                changeItemMode();
 
+
+                break;
+        }
+        invalidate();
+        return true;
+    }
+
+    private GestureLockView getGestureViewById(int id) {
+        for (GestureLockView gestureLockView : gestureLockViews) {
+            if (gestureLockView.getId() == id) {
+                return gestureLockView;
+            }
+        }
+        return null;
+    }
+
+    private void changeItemMode() {
+        for (GestureLockView gestureLockView : gestureLockViews) {
+//            if (mChooser.contains(gestureLockView.getId())) {
+//                gestureLockView.setMode(GestureLockView.Mode.STATUS_FINGER_UP);
+//            }
+            gestureLockView.setMode(GestureLockView.Mode.STATUS_FINGER_UP);
+        }
+    }
+
+    private void reset() {
+        mChooser.clear();
+        mPath.reset();
+        for (int x = 0; x < gestureLockViews.length; x++) {
+            gestureLockViews[x].setMode(GestureLockView.Mode.STATUS_NO_FINGER);
+        }
+    }
+
+    private boolean checkPostionInChid(GestureLockView child, int x, int y) {
+        int padding = (int) (mGestureLockViewWidth * 0);
+        if (x >= child.getLeft() + padding && x <= child.getRight() - padding && y <= child.getBottom() + padding && y >= child.getTop() - padding) {
+            return true;
+        }
+        return false;
+    }
+
+    @Nullable
+    private GestureLockView getChildOnPot(int x, int y) {
+        for (GestureLockView gestureLockView : gestureLockViews) {
+            if (checkPostionInChid(gestureLockView, x, y)) {
+                return gestureLockView;
+            }
+        }
+
+        return null;
+    }
+
+    @Override
+    protected void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (mPath != null) {
+            canvas.drawPath(mPath, mPaint);
+        }
+        if (mChooser.size() > 0) {
+            if (mLastPathX != 0 && mLastPathY != 0) {
+                canvas.drawLine(mLastPathX, mLastPathY, mTmpTarget.x, mTmpTarget.y, mPaint);
+            }
+        }
+    }
 }

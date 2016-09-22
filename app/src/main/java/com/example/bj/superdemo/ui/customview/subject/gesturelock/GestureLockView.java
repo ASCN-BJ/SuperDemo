@@ -68,6 +68,7 @@ public class GestureLockView extends View {
         mRaX = mWidth / 2;
         mRaY = mWidth / 2;
         mRaius = mRaX / 4;
+//        setMeasuredDimension(mWidth,mHeight);
 
     }
 
@@ -79,15 +80,17 @@ public class GestureLockView extends View {
                 canvas.drawCircle(mRaX, mRaY, mRaius, mPaint);
                 break;
             case STATUS_FINGER_ON:
-                mPaint.setColor(mWrongColor);
-                canvas.drawCircle(mRaX, mRaY, mRaius, mPaint);
-                break;
-            case STATUS_FINGER_UP:
                 mPaint.setColor(mTouchColor);
                 canvas.drawCircle(mRaX, mRaY, mRaius, mPaint);
+                canvas.drawCircle(mRaX, mRaY, mRaX - 4, mPaint);
+                break;
+            case STATUS_FINGER_UP:
+                mPaint.setColor(mWrongColor);
+                canvas.drawCircle(mRaX, mRaY, mRaius, mPaint);
+                canvas.drawCircle(mRaX, mRaY, mRaX - 4, mPaint);
                 break;
         }
-        super.onDraw(canvas);
+//        super.onDraw(canvas);
     }
 
     private void initData(Context context) {
@@ -98,6 +101,8 @@ public class GestureLockView extends View {
     }
 
     public void setMode(Mode mode) {
-        mCurrentMode = mode;
+        this.mCurrentMode = mode;
+        invalidate();
     }
+
 }

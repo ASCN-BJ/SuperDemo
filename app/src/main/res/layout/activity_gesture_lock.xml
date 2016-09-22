@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3300ff04"
+    android:background="@drawable/bizhia"
     tools:context="com.example.bj.superdemo.ui.customview.view_ui.GestureLockActivity">
 
     <com.example.bj.superdemo.ui.customview.subject.gesturelock.GestureLockViewGroup
-        android:layout_width="900px"
-        android:layout_height="900px"
-        android:background="@color/black" />
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>
