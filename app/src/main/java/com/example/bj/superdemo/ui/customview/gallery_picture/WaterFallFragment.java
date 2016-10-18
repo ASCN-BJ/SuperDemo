@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.bj.superdemo.R;
+import com.example.bj.superdemo.ui.customview.common.DividerItemDecoration;
 import com.example.bj.superdemo.ui.customview.common.MyRecycleItemDecoder;
 import com.example.bj.superdemo.ui.utils.viewutil.MyImageLoader;
 
@@ -45,14 +46,18 @@ public class WaterFallFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setDrawableResouces(view);
         rv_water_fall = (RecyclerView) view.findViewById(R.id.rv_water_fall);
-        myRecycleItemDecoder = new MyRecycleItemDecoder();
+//        myRecycleItemDecoder = new MyRecycleItemDecoder(this.getActivity());
 //        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
 //        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 //        rv_water_fall.setLayoutManager(layoutManager);
-        GridLayoutManager layoutManager = new GridLayoutManager(this.getActivity(), 2);
+        GridLayoutManager layoutManager = new GridLayoutManager(this.getActivity(), 5);
         layoutManager.setOrientation(GridLayoutManager.VERTICAL);
         rv_water_fall.setLayoutManager(layoutManager);
-        rv_water_fall.addItemDecoration(myRecycleItemDecoder);
+
+//        rv_water_fall.addItemDecoration(new DividerItemDecoration(this.getActivity(), DividerItemDecoration.VERTICAL_LIST));
+//        rv_water_fall.addItemDecoration(new DividerItemDecoration(this.getActivity(), DividerItemDecoration.HORIZONTAL_LIST));
+
+        rv_water_fall.addItemDecoration(new MyRecycleItemDecoder(this.getActivity()));
         mAdapter = new WaterFallAdatper(this.getActivity(), mLists);
         rv_water_fall.setItemAnimator(new DefaultItemAnimator());
         rv_water_fall.addItemDecoration(new RecyclerView.ItemDecoration() {
