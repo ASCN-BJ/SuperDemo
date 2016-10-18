@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.example.bj.superdemo.ui.customview.gallery_picture.GalleryRecycleView
+        android:id="@+id/rv_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+    </com.example.bj.superdemo.ui.customview.gallery_picture.GalleryRecycleView>
+
+    <LinearLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="800px"
+        android:background="#000000">
+
+        <ImageView
+            android:id="@+id/iv_gallery_main_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>

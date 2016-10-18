@@ -93,5 +93,15 @@
             android:text="手势解锁"
             android:textSize="28px" />
 
+        <TextView
+            android:id="@+id/tv_gallery_picture"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:layout_marginTop="100px"
+            android:background="@color/shallow_blue"
+            android:gravity="center"
+            android:text="图片的横向滑动和瀑布流效果"
+            android:textSize="28px" />
+
     </LinearLayout>
 </ScrollView>

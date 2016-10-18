@@ -8,6 +8,8 @@
 
     <declare-styleable name="CustomViewBase2">
         <attr name="TitleTexts" format="string" />
+
+        <attr name="TitleTextss" format="string" />
         <attr name="TitleTextColors" format="color" />
         <attr name="TitleTextSizes" format="dimension" />
         <attr name="ImageSrcs" format="reference" />

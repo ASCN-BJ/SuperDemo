@@ -13,6 +13,7 @@ import com.example.bj.superdemo.ui.bean.MessageEvent;
 import com.example.bj.superdemo.ui.customview.BigMapActivity;
 import com.example.bj.superdemo.ui.customview.ViewPagerActivity;
 import com.example.bj.superdemo.ui.customview.eventbus.EventBusDemo;
+import com.example.bj.superdemo.ui.customview.gallery_picture.Main4Activity;
 import com.example.bj.superdemo.ui.customview.subject.CustomViewDrawShape;
 import com.example.bj.superdemo.ui.customview.view_ui.CustomViewActivityRect;
 import com.example.bj.superdemo.ui.customview.view_ui.DragLeftDeleteListActivity;
@@ -29,6 +30,7 @@ public class Main3Activity extends BaseActivity {
     private TextView iv_viewp;
     private TextView tv_event_bus_demo;
     private TextView tv_delete_list;
+    private TextView tv_gallery_picture;
 
     public void initData() {
         setContentView(R.layout.activity_main3);
@@ -44,6 +46,8 @@ public class Main3Activity extends BaseActivity {
         findViewById(R.id.tv_vertical_layout).setOnClickListener(this);
         findViewById(R.id.tv_dmeo_shape).setOnClickListener(this);
         findViewById(R.id.tv_gesture_lock).setOnClickListener(this);
+        tv_gallery_picture = (TextView) findViewById(R.id.tv_gallery_picture);
+        tv_gallery_picture.setOnClickListener(this);
         EventBus.getDefault().register(this);
     }
 
@@ -73,6 +77,9 @@ public class Main3Activity extends BaseActivity {
                 break;
             case R.id.tv_gesture_lock:
                 startActivity(new Intent(this, GestureLockActivity.class));
+                break;
+            case R.id.tv_gallery_picture:
+                startActivity(new Intent(this, Main4Activity.class));
                 break;
             default:
                 break;

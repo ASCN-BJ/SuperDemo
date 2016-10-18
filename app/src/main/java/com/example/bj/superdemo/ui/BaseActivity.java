@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 /**
@@ -19,6 +21,7 @@ import com.zhy.autolayout.AutoLayoutActivity;
  */
 public abstract class BaseActivity extends AutoLayoutActivity implements View.OnClickListener {
     public Context context = BaseActivity.this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +30,7 @@ public abstract class BaseActivity extends AutoLayoutActivity implements View.On
 //        view.setSystemUiVisibility(option);
 //        android.support.v7.app.ActionBar actionBar=this.getSupportActionBar();
 //        actionBar.hide();
-
+        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(BaseActivity.this));
         initData();
     }
 

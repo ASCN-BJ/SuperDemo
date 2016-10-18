@@ -31,6 +31,7 @@ public class GestureLockActivity extends Activity {
         mLists.add(8);
         mLists.add(9);
         rl.setGestureLock(mLists);
+        rl.setTimer(2);
         rl.setJudgeListner(new GestureLockViewGroup.JudgeGestureListner() {
             @Override
             public void getGestureJudgeResult(boolean result) {

@@ -13,8 +13,6 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.example.bj.superdemo.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +40,10 @@ public class GestureLockViewGroup extends RelativeLayout {
     private Point mTmpTarget = new Point();
     private List<Integer> specificGesture;
     private JudgeGestureListner judgeListner;
+    //解锁次数
+    private int mTimerCount = 4;
+    private Context mContext;
+    private int mFailureCompleteTime;
 
     public GestureLockViewGroup(Context context) {
         super(context);
@@ -59,6 +61,7 @@ public class GestureLockViewGroup extends RelativeLayout {
     }
 
     private void initData(Context context) {
+        mContext = context;
         mPath = new Path();
         mPaint = new Paint();//Paint.ANTI_ALIAS_FLAG
         mPaint.setAntiAlias(true);
@@ -164,14 +167,21 @@ public class GestureLockViewGroup extends RelativeLayout {
                 mTmpTarget.y = mLastPathY;
                 changeItemMode();
                 if (specificGesture != null && !specificGesture.isEmpty() && !mChooser.isEmpty()) {
-                    if (judgeListner != null) {
-                        if (JudgeResult(specificGesture, mChooser)) {
-                            judgeListner.getGestureJudgeResult(true);
-                        } else {
+                    if (mTimerCount > 0) {
+                        this.mTimerCount--;
+                        if (judgeListner != null) {
+                            if (JudgeResult(specificGesture, mChooser)) {
+                                judgeListner.getGestureJudgeResult(true);
+                            } else {
+                                judgeListner.getGestureJudgeResult(false);
+                            }
+                        }
+                    } else {
+                        if (judgeListner != null) {
                             judgeListner.getGestureJudgeResult(false);
                         }
+                        Toast.makeText(getContext(), "超过次数", Toast.LENGTH_SHORT).show();
                     }
-
                 }
                 break;
         }
@@ -256,6 +266,25 @@ public class GestureLockViewGroup extends RelativeLayout {
 
         return null;
     }
+
+    /**
+     * 设置解锁次数
+     *
+     * @param x
+     */
+    public void setTimer(int x) {
+        mTimerCount = x;
+    }
+
+    /**
+     * 设置解锁失败下次解锁的时间
+     *
+     * @param second
+     */
+    public void setFailureCompleteTime(int second) {
+        mFailureCompleteTime = second;
+    }
+
 
     @Override
     protected void dispatchDraw(Canvas canvas) {
