@@ -1,14 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--<shape xmlns:android="http://schemas.android.com/apk/res/android">-->
-    <!--<stroke android:color="@android:color/holo_red_dark"></stroke>-->
-    <!--<gradient-->
-        <!--&gt;-->
+<?xml version="1.0" encoding="utf-8"?><!--<shape xmlns:android="http://schemas.android.com/apk/res/android">--><!--<stroke android:color="@android:color/holo_red_dark"></stroke>--><!--<gradient--><!--&gt;-->
 
 
-    <!--</gradient>-->
-<!--</shape>-->
+<!--</gradient>--><!--</shape>-->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <size android:height="1dp" />
-    <solid android:color="#ff992900" />
+    <size android:height="8dp" />
+    <size android:width="8dp" />
+    <solid android:color="#FFF" />
 </shape>

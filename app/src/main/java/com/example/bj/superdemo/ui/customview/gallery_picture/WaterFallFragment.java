@@ -9,6 +9,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ import com.example.bj.superdemo.ui.utils.viewutil.MyImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by bj on 2016/10/8.
@@ -50,18 +52,20 @@ public class WaterFallFragment extends Fragment {
 //        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
 //        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 //        rv_water_fall.setLayoutManager(layoutManager);
-        GridLayoutManager layoutManager = new GridLayoutManager(this.getActivity(), 5);
-        layoutManager.setOrientation(GridLayoutManager.VERTICAL);
+
+//        GridLayoutManager layoutManager = new GridLayoutManager(this.getActivity(), 3);
+//        layoutManager.setOrientation(GridLayoutManager.VERTICAL);
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+//        layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
         rv_water_fall.setLayoutManager(layoutManager);
 
-//        rv_water_fall.addItemDecoration(new DividerItemDecoration(this.getActivity(), DividerItemDecoration.VERTICAL_LIST));
-//        rv_water_fall.addItemDecoration(new DividerItemDecoration(this.getActivity(), DividerItemDecoration.HORIZONTAL_LIST));
+        rv_water_fall.addItemDecoration(new DividerItemDecoration(this.getActivity(), DividerItemDecoration.VERTICAL_LIST));
+        rv_water_fall.addItemDecoration(new DividerItemDecoration(this.getActivity(), DividerItemDecoration.HORIZONTAL_LIST));
 
-        rv_water_fall.addItemDecoration(new MyRecycleItemDecoder(this.getActivity()));
+//        rv_water_fall.addItemDecoration(new MyRecycleItemDecoder(this.getActivity()));
         mAdapter = new WaterFallAdatper(this.getActivity(), mLists);
-        rv_water_fall.setItemAnimator(new DefaultItemAnimator());
-        rv_water_fall.addItemDecoration(new RecyclerView.ItemDecoration() {
-        });
+//        rv_water_fall.setItemAnimator(new DefaultItemAnimator());
+//        rv_water_fall.addItemDecoration(new RecyclerView.ItemDecoration() {});
         rv_water_fall.setAdapter(mAdapter);
     }
 
@@ -75,17 +79,22 @@ public class WaterFallFragment extends Fragment {
     }
 
     class WaterFallAdatper extends RecyclerView.Adapter<MyViewHolder> {
+        private List<Integer> mHeightSizes;
         private Context mContext;
         private List<Integer> mList;
 
         public WaterFallAdatper(Context context, List<Integer> list) {
             this.mContext = context;
             this.mList = list;
+            mHeightSizes = new ArrayList<>();
+            for (int x = 0; x < list.size(); x++) {
+                mHeightSizes.add((int) ((Math.random() + 0.5) * 400));
+            }
         }
 
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return MyViewHolder.newInstance(mContext, parent);
+            return MyViewHolder.newInstance(mContext, parent, mHeightSizes);
         }
 
         @Override
@@ -103,6 +112,8 @@ public class WaterFallFragment extends Fragment {
 
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
+
+
         public MyViewHolder(View itemView) {
             super(itemView);
             image = (ImageView) itemView.findViewById(R.id.iv_image_icon);
@@ -110,13 +121,15 @@ public class WaterFallFragment extends Fragment {
 
         private ImageView image;
 
-        public static MyViewHolder newInstance(Context context, ViewGroup parent) {
+        public static MyViewHolder newInstance(Context context, ViewGroup parent, List<Integer> mLists) {
             View view = LayoutInflater.from(context).inflate(R.layout.item_gallery, parent, false);
             ViewGroup.LayoutParams params = view.getLayoutParams();
-            params.height = 650;
+            params.height = (int) ((Math.random() + 0.5) * 400);
             params.width = LinearLayout.LayoutParams.MATCH_PARENT;
+//            view.setPadding(5, 5, 5, 5);
+            view.setPadding(0, 0, 0, 0);
             view.setLayoutParams(params);
-            view.setBackgroundColor(Color.parseColor("#3300ff66"));
+            view.setBackgroundColor(Color.WHITE);
             return (new MyViewHolder(view));
         }
     }

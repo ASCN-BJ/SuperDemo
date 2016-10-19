@@ -16,6 +16,8 @@ import android.support.v7.widget.RecyclerView.State;
 import android.util.Log;
 import android.view.View;
 
+import com.example.bj.superdemo.R;
+
 
 /**
  * This class is from the v7 samples of the Android SDK. It's not by me!
@@ -37,9 +39,10 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     private int mOrientation;
 
     public DividerItemDecoration(Context context, int orientation) {
-        final TypedArray a = context.obtainStyledAttributes(ATTRS);
-        mDivider = a.getDrawable(0);
-        a.recycle();
+//        final TypedArray a = context.obtainStyledAttributes(ATTRS);
+//        mDivider = a.getDrawable(0);
+//        a.recycle();
+        mDivider = context.getResources().getDrawable(R.drawable.basic_divider_recycle_view);
         setOrientation(orientation);
     }
 

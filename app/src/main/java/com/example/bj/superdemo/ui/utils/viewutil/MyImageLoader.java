@@ -1,6 +1,5 @@
 package com.example.bj.superdemo.ui.utils.viewutil;
 
-import android.databinding.tool.util.StringUtils;
 import android.widget.ImageView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
