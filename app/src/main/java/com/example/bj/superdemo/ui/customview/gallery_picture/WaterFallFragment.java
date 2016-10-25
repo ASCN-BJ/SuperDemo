@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import com.example.bj.superdemo.R;
 import com.example.bj.superdemo.ui.customview.common.DividerItemDecoration;
 import com.example.bj.superdemo.ui.customview.common.MyRecycleItemDecoder;
+import com.example.bj.superdemo.ui.utils.viewutil.GlideImageLoader;
 import com.example.bj.superdemo.ui.utils.viewutil.MyImageLoader;
 
 import java.util.ArrayList;
@@ -101,7 +102,8 @@ public class WaterFallFragment extends Fragment {
         public void onBindViewHolder(MyViewHolder holder, int position) {
 //            holder.image.
 //            holder.image.setImageResource(mList.get(position));
-            MyImageLoader.showImage("drawable://" + mList.get(position), holder.image);
+//            MyImageLoader.showImage("drawable://" + mList.get(position), holder.image);
+//            GlideImageLoader.i
         }
 
         @Override
