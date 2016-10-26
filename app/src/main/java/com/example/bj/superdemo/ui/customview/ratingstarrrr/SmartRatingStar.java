@@ -35,6 +35,8 @@ public class SmartRatingStar extends LinearLayout {
     private int totalStars;
     private Context mContext;
 
+    private OnStarsPageListner onStarsPageListner;
+
     public SmartRatingStar(Context context) {
         this(context, null);
     }
@@ -88,6 +90,14 @@ public class SmartRatingStar extends LinearLayout {
         return true;
     }
 
+    public interface OnStarsPageListner {
+        void onStars(int startCount);
+    }
+
+    public void setOnStarsPageListner(OnStarsPageListner listner) {
+        this.onStarsPageListner = listner;
+    }
+
     private void setStars(int x, int y) {
         ImageView view = (ImageView) getChildByPos(x, y);
         if (view != null) {
@@ -101,6 +111,7 @@ public class SmartRatingStar extends LinearLayout {
                     getChildAt(t).setBackground(getResources().getDrawable(R.drawable.star_grey_three));
                 }
             }
+            onStarsPageListner.onStars(w );
         }
     }
 
@@ -178,8 +189,6 @@ public class SmartRatingStar extends LinearLayout {
 //        params.width = 400;
 //        params.height = 400;
 //        textView.setLayoutParams(params);
-        System.out.println("getChildCount" + getChildCount());
-
         super.onLayout(changed, l, t, r, b);
     }
 

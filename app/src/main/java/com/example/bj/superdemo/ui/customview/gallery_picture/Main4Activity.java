@@ -6,9 +6,11 @@ import android.app.FragmentTransaction;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
 import com.example.bj.superdemo.R;
 import com.example.bj.superdemo.ui.BaseActivity;
+import com.example.bj.superdemo.ui.customview.ratingstarrrr.SmartRatingStar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,8 @@ public class Main4Activity extends BaseActivity {
     private List<String> fragmentNames;
     private RatingBar ratingBar;
 
+    private SmartRatingStar srt_stars;
+
     @Override
     public void initData() {
         setContentView(R.layout.activity_main4);
@@ -28,12 +32,19 @@ public class Main4Activity extends BaseActivity {
         fragmentNames.add(WaterFallFragment.class.getSimpleName());
         findViewById(R.id.btn_waterfall).setOnClickListener(this);
         findViewById(R.id.btn_gallery).setOnClickListener(this);
+        srt_stars = (SmartRatingStar) findViewById(R.id.srt_stars);
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
         System.out.println(" ratingBar.getRating();" + ratingBar.getRating());
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
 //                System.out.println("rating" + rating);
+            }
+        });
+        srt_stars.setOnStarsPageListner(new SmartRatingStar.OnStarsPageListner() {
+            @Override
+            public void onStars(int startCount) {
+                System.out.println("startCount" + startCount);
             }
         });
     }
