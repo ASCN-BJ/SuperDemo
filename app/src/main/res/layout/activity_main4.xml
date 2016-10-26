@@ -30,6 +30,53 @@
             android:text="画廊效果" />
     </LinearLayout>
 
+    <com.example.bj.superdemo.ui.customview.ratingstarrrr.SmartRatingStar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_marginLeft="@dimen/px10_w"
+            android:background="@drawable/yellow_star_three" />
+
+        <ImageView
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_marginLeft="@dimen/px10_w"
+            android:background="@drawable/yellow_star_three" />
+
+        <ImageView
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_marginLeft="@dimen/px10_w"
+            android:background="@drawable/yellow_star_three" />
+
+        <ImageView
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_marginLeft="@dimen/px10_w"
+            android:background="@drawable/yellow_star_three" />
+
+        <ImageView
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_marginLeft="@dimen/px10_w"
+            android:background="@drawable/yellow_star_three" />
+    </com.example.bj.superdemo.ui.customview.ratingstarrrr.SmartRatingStar>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/RatingBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="5"
+        android:stepSize="1"
+        android:visibility="gone" />
+
+
     <LinearLayout
         android:id="@+id/ll_main4_container"
         android:layout_width="match_parent"

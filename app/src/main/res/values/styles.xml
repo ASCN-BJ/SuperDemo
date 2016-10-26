@@ -10,5 +10,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="@style/BaseAppTheme"></style>
 
-
+    <style name="RatingBarStyle" parent="Base.Widget.AppCompat.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingstar_itemt</item>
+        <item name="android:maxHeight">@dimen/px20_w</item>
+    </style>
 </resources>

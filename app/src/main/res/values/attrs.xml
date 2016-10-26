@@ -18,4 +18,12 @@
             <enum name="centers" value="1" />
         </attr>
     </declare-styleable>
+    <declare-styleable name="SmartRatingStar">
+        <attr name="FirstDrawable" format="reference" />
+        <attr name="SecondDrawable" format="reference" />
+        <attr name="MaxStarNumber" format="integer" />
+        <attr name="MiniStarNumber" format="integer" />
+        <attr name="StarMargin" format="integer" />
+        <attr name="TotalStars" format="integer" />
+    </declare-styleable>
 </resources>

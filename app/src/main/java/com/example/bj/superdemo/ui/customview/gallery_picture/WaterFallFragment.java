@@ -102,7 +102,7 @@ public class WaterFallFragment extends Fragment {
         public void onBindViewHolder(MyViewHolder holder, int position) {
 //            holder.image.
 //            holder.image.setImageResource(mList.get(position));
-//            MyImageLoader.showImage("drawable://" + mList.get(position), holder.image);
+            MyImageLoader.showImage("drawable://" + mList.get(position), holder.image);
 //            GlideImageLoader.i
         }
 

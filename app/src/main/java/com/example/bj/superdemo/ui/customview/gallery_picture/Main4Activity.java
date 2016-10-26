@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RatingBar;
 
 import com.example.bj.superdemo.R;
 import com.example.bj.superdemo.ui.BaseActivity;
@@ -17,6 +18,7 @@ public class Main4Activity extends BaseActivity {
     private Button btn_gallery;
     private Fragment galleryFragment, waterFallFragment;
     private List<String> fragmentNames;
+    private RatingBar ratingBar;
 
     @Override
     public void initData() {
@@ -26,6 +28,14 @@ public class Main4Activity extends BaseActivity {
         fragmentNames.add(WaterFallFragment.class.getSimpleName());
         findViewById(R.id.btn_waterfall).setOnClickListener(this);
         findViewById(R.id.btn_gallery).setOnClickListener(this);
+        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        System.out.println(" ratingBar.getRating();" + ratingBar.getRating());
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+//                System.out.println("rating" + rating);
+            }
+        });
     }
 
     private void showFragment(String fname, String tag) {
