@@ -1,25 +1,23 @@
 package com.example.bj.superdemo.ui;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.app.Activity;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.bj.superdemo.R;
-import com.example.bj.superdemo.ui.BaseActivity;
 import com.example.bj.superdemo.ui.bean.MessageEvent;
 import com.example.bj.superdemo.ui.customview.BigMapActivity;
 import com.example.bj.superdemo.ui.customview.ViewPagerActivity;
 import com.example.bj.superdemo.ui.customview.eventbus.EventBusDemo;
 import com.example.bj.superdemo.ui.customview.gallery_picture.Main4Activity;
-import com.example.bj.superdemo.ui.customview.subject.CustomViewDrawShape;
 import com.example.bj.superdemo.ui.customview.view_ui.CustomViewActivityRect;
 import com.example.bj.superdemo.ui.customview.view_ui.DragLeftDeleteListActivity;
 import com.example.bj.superdemo.ui.customview.view_ui.GestureLockActivity;
 import com.example.bj.superdemo.ui.customview.view_ui.ShapeDemoActivity;
 import com.example.bj.superdemo.ui.customview.view_ui.VeticalLayoutActivity;
+import com.example.bj.superdemo.ui.mvpdemo_a.views.views.ShowUserData;
+import com.example.bj.superdemo.ui.mvpdemo_b.MvpDemo_b;
+import com.example.bj.superdemo.ui.ui.PullToRefreshAndDragToLoadActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -31,6 +29,9 @@ public class Main3Activity extends BaseActivity {
     private TextView tv_event_bus_demo;
     private TextView tv_delete_list;
     private TextView tv_gallery_picture;
+    private TextView tv_pull_push;
+    private TextView tv_mvp_demo;
+    private TextView tv_mvp_demo_b;
 
     public void initData() {
         setContentView(R.layout.activity_main3);
@@ -48,6 +49,11 @@ public class Main3Activity extends BaseActivity {
         findViewById(R.id.tv_gesture_lock).setOnClickListener(this);
         tv_gallery_picture = (TextView) findViewById(R.id.tv_gallery_picture);
         tv_gallery_picture.setOnClickListener(this);
+        tv_mvp_demo = (TextView) findViewById(R.id.tv_mvp_demo);
+        tv_mvp_demo.setOnClickListener(this);
+        tv_mvp_demo_b = (TextView) findViewById(R.id.tv_mvp_demo_b);
+        tv_mvp_demo_b.setOnClickListener(this);
+        findViewById(R.id.tv_pull_push).setOnClickListener(this);
         EventBus.getDefault().register(this);
     }
 
@@ -80,6 +86,15 @@ public class Main3Activity extends BaseActivity {
                 break;
             case R.id.tv_gallery_picture:
                 startActivity(new Intent(this, Main4Activity.class));
+                break;
+            case R.id.tv_pull_push:
+                startActivity(new Intent(this, PullToRefreshAndDragToLoadActivity.class));//// TODO: 2016/11/21  unfinshied
+                break;
+            case R.id.tv_mvp_demo:
+                startActivity(new Intent(this, ShowUserData.class));
+                break;
+            case R.id.tv_mvp_demo_b:
+                startActivity(new Intent(this, MvpDemo_b.class));
                 break;
             default:
                 break;

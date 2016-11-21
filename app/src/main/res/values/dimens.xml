@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <dimen name="toolbar_padding_top_main">0dp</dimen>
     <!-- 720x1280 -->
     <dimen name="px3_h">1.5dp</dimen>
     <dimen name="px20_w">10dp</dimen>
@@ -158,6 +158,7 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 
 </resources>

@@ -14,4 +14,8 @@
         <item name="android:progressDrawable">@drawable/ratingstar_itemt</item>
         <item name="android:maxHeight">@dimen/px20_w</item>
     </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
