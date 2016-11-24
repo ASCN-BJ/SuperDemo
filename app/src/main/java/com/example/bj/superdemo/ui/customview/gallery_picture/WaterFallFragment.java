@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.bumptech.glide.Glide;
 import com.example.bj.superdemo.R;
 import com.example.bj.superdemo.ui.customview.common.DividerItemDecoration;
 import com.example.bj.superdemo.ui.customview.common.MyRecycleItemDecoder;
@@ -102,7 +103,8 @@ public class WaterFallFragment extends Fragment {
         public void onBindViewHolder(MyViewHolder holder, int position) {
 //            holder.image.
 //            holder.image.setImageResource(mList.get(position));
-            MyImageLoader.showImage("drawable://" + mList.get(position), holder.image);
+//            MyImageLoader.showImage("drawable://" + mList.get(position), holder.image);
+            Glide.with(mContext).load(mList.get(position)).into(holder.image);
 //            GlideImageLoader.i
         }
 
