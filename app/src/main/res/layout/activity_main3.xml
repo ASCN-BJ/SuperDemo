@@ -129,6 +129,7 @@
                 android:gravity="center"
                 android:text="Mvp设计模式简介"
                 android:textSize="28px" />
+
             <TextView
                 android:id="@+id/tv_mvp_demo_b"
                 android:layout_width="match_parent"
@@ -137,6 +138,16 @@
                 android:background="@color/shallow_blue"
                 android:gravity="center"
                 android:text="Mvp设计模式简介B"
+                android:textSize="28px" />
+
+            <TextView
+                android:id="@+id/tv_web2js"
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:layout_marginTop="100px"
+                android:background="@color/shallow_blue"
+                android:gravity="center"
+                android:text="webView與JS的交互"
                 android:textSize="28px" />
 
 

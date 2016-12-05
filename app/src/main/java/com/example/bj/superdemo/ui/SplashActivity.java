@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.bj.superdemo.R;
+import com.example.bj.superdemo.ui.utils.viewutil.math.OperationUtil;
 
 public class SplashActivity extends BaseActivity {
     private EditText user, pwd;
@@ -23,6 +24,7 @@ public class SplashActivity extends BaseActivity {
         user.setOnClickListener(this);
         pwd.setOnClickListener(this);
         login.setOnClickListener(this);
+        System.out.println("resutl--》"+OperationUtil.mutilAdd(3.1,4.1,9.0,30.1));
     }
 
     @Override
