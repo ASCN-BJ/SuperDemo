@@ -19,6 +19,8 @@ import com.example.bj.superdemo.ui.mvpdemo_a.views.views.ShowUserData;
 import com.example.bj.superdemo.ui.mvpdemo_b.MvpDemo_b;
 import com.example.bj.superdemo.ui.ui.web_view_demo.Native2Js;
 import com.example.bj.superdemo.ui.ui.PullToRefreshAndDragToLoadActivity;
+import com.example.bj.superdemo.ui.ui.web_view_demo.WebViewDemo;
+import com.example.bj.superdemo.ui.ui.web_view_demo.WebViewDemo2;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -34,6 +36,7 @@ public class Main3Activity extends BaseActivity {
     private TextView tv_mvp_demo;
     private TextView tv_mvp_demo_b;
     private TextView tv_web2js;
+
     public void initData() {
         setContentView(R.layout.activity_main3);
         tv_my_view_pager = (TextView) this.findViewById(R.id.tv_my_view_pager);
@@ -56,7 +59,7 @@ public class Main3Activity extends BaseActivity {
         tv_mvp_demo_b.setOnClickListener(this);
         findViewById(R.id.tv_pull_push).setOnClickListener(this);
         EventBus.getDefault().register(this);
-        tv_web2js= (TextView) findViewById(R.id.tv_web2js);
+        tv_web2js = (TextView) findViewById(R.id.tv_web2js);
         tv_web2js.setOnClickListener(this);
     }
 
@@ -100,7 +103,7 @@ public class Main3Activity extends BaseActivity {
                 startActivity(new Intent(this, MvpDemo_b.class));
                 break;
             case R.id.tv_web2js:
-                startActivity(new Intent(this, Native2Js.class));
+                startActivity(new Intent(this, WebViewDemo2.class));
                 break;
             default:
                 break;

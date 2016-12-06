@@ -104,8 +104,8 @@ public class Native2Js extends BaseActivity {
         webSetting.setJavaScriptEnabled(true);
         webSetting.setDomStorageEnabled(true);
         webSetting.setDefaultTextEncodingName("utf-8");
-//        wv.loadUrl("http://www.baidu.com");
-        wv.loadUrl("file:///android_asset/test.html");
+        wv.loadUrl("http://www.baidu.com");
+//        wv.loadUrl("file:///android_asset/test.html");
         wv.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url) {

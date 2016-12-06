@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.bj.superdemo.ui.Main2Activity">
     <ImageView
+        android:contentDescription="图片描述"
         android:id="@+id/iv_beautiful_girl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

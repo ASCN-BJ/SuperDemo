@@ -15,7 +15,6 @@ import com.example.bj.superdemo.ui.BaseActivity;
 public class WebViewDownload extends BaseActivity implements Ipresenter {
 
     private UcWebView wv_main;
-
     @Override
     public void initData() {
 
