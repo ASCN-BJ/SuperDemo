@@ -21,6 +21,7 @@ import com.example.bj.superdemo.ui.ui.web_view_demo.Native2Js;
 import com.example.bj.superdemo.ui.ui.PullToRefreshAndDragToLoadActivity;
 import com.example.bj.superdemo.ui.ui.web_view_demo.WebViewDemo;
 import com.example.bj.superdemo.ui.ui.web_view_demo.WebViewDemo2;
+import com.example.bj.superdemo.ui.ui.web_view_demo.WebViewDemo3Activity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -103,7 +104,7 @@ public class Main3Activity extends BaseActivity {
                 startActivity(new Intent(this, MvpDemo_b.class));
                 break;
             case R.id.tv_web2js:
-                startActivity(new Intent(this, WebViewDemo2.class));
+                startActivity(new Intent(this, WebViewDemo3Activity.class));
                 break;
             default:
                 break;

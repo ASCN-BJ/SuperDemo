@@ -84,6 +84,10 @@
         <activity
             android:name=".ui.ui.web_view_demo.WebViewDemo2"
             android:label="@string/title_activity_web_view_demo2"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ui.ui.web_view_demo.WebViewDemo3Activity"
+            android:label="@string/title_activity_web_view_demo3"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
