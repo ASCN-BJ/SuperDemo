@@ -230,6 +230,9 @@ public class WebViewDemo2 extends AppCompatActivity {
         Log.d(TAG, "onActivityResult");
 
         if (requestCode == FILECHOOSER_RESULTCODE) {
+            if (requestCode != Activity.RESULT_OK) {
+                mUploadMessage.onReceiveValue(null);
+            }
             if (null == mUploadMessage) return;
             Uri result = data == null || resultCode != RESULT_OK ? null
                     : data.getData();
@@ -265,9 +268,9 @@ public class WebViewDemo2 extends AppCompatActivity {
         } else if (requestCode == INPUT_FILE_REQUEST_CODE_4) {
             Uri result = null;
 //            if (data != null) {
-                if (mCameraPhotoPath != null) {
-                    result = Uri.parse(mCameraPhotoPath);
-                }
+            if (mCameraPhotoPath != null) {
+                result = Uri.parse(mCameraPhotoPath);
+            }
 //            }
             mUploadMessage.onReceiveValue(result);//file:/storage/emulated/0/tmp.png
             mUploadMessage = null;

@@ -3,11 +3,21 @@ package com.example.bj.superdemo.ui.utils.viewutil.fileutils;
 import android.content.ContentUris;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.util.Base64;
+
+import com.bumptech.glide.load.resource.bitmap.BitmapDecoder;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 
 /**
  * Created by bj on 2016-12-6.
@@ -15,6 +25,101 @@ import android.provider.MediaStore;
  */
 
 public class ImageFilePath {
+
+    /**
+     * 图片转成string
+     *
+     * @param bitmap
+     * @return
+     */
+    public static String convertIconToString(Bitmap bitmap)
+    {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();// outputstream
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] appicon = baos.toByteArray();// 转为byte数组
+        return Base64.encodeToString(appicon, Base64.DEFAULT);
+
+    }
+
+    /**
+     * string转成bitmap
+     *
+     * @param st
+     */
+    public static Bitmap convertStringToIcon(String st)
+    {
+        // OutputStream out;
+        Bitmap bitmap = null;
+        try
+        {
+            // out = new FileOutputStream("/sdcard/aa.jpg");
+            byte[] bitmapArray;
+            bitmapArray = Base64.decode(st, Base64.DEFAULT);
+            bitmap =
+                    BitmapFactory.decodeByteArray(bitmapArray, 0,
+                            bitmapArray.length);
+            // bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+            return bitmap;
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
+    }
+
+
+
+
+
+
+    /**
+     * 获取图片的压缩路径
+     *
+     * @param path 被压缩图片文件途径
+     * @return
+     */
+    public static String getImageCompressPath(String path) {
+        int sWidth = 768;
+        int sHeight = 1024;
+
+        if (path == null) {
+            throw new NullPointerException("the path of image is null");
+        }
+        File mFile = new File(path);
+        if (!mFile.exists()) {
+            throw new NullPointerException("can't find the picture");
+        }
+        Bitmap bitmap = BitmapFactory.decodeFile(path);
+        if (bitmap == null) {
+            return "";
+        }
+        int bmpWidth = bitmap.getWidth();
+        int bmpHeight = bitmap.getHeight();
+
+        //缩放图片的尺寸
+        float scaleWidth = (float) sWidth / bmpWidth;     //按固定大小缩放  sWidth 写多大就多大
+        float scaleHeight = (float) sHeight / bmpHeight;  //
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleWidth, scaleHeight);
+
+        //产生缩放后的Bitmap对象
+        Bitmap resizeBitmap = Bitmap.createBitmap(
+                bitmap, 0, 0, bmpWidth, bmpHeight, matrix, false);
+        String fileName = "/sdcard/test.jpg";
+        String paths= convertIconToString( bitmap);
+        bitmap.recycle();
+//        Bitmap resizeBitmap = bitmap;
+//        //Bitmap to byte[]
+//        byte[] photoData = bitmap2Bytes(resizeBitmap);
+//
+//        //save file
+//        String fileName = "/sdcard/test.jpg";
+//        FileUtils.writeToFile(fileName, photoData);
+
+        return paths;
+    }
+
+
     /**
      * Method for return file path of Gallery image
      *

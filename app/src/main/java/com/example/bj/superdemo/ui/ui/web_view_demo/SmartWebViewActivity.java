@@ -4,19 +4,16 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import android.webkit.JavascriptInterface;
 import android.webkit.JsResult;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -26,16 +23,15 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.example.bj.superdemo.R;
-import com.example.bj.superdemo.ui.utils.viewutil.fileutils.BitmapCompressor;
 
 import java.io.File;
 import java.lang.reflect.Method;
 import java.net.URL;
 
-public class WebViewDemo3Activity extends AppCompatActivity {
+public class SmartWebViewActivity extends AppCompatActivity {
+
     private WebView webView;
 
-    @JavascriptInterface
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +39,7 @@ public class WebViewDemo3Activity extends AppCompatActivity {
         webView = (WebView) findViewById(R.id.webView1);
 
         initWebView(webView);
-
         webView.loadUrl("http://baidu.com");
-//        webView.loadUrl("http://192.168.1.187:8020/AIC_SUPPER/index.html#/home");
 
     }
 
@@ -73,6 +67,7 @@ public class WebViewDemo3Activity extends AppCompatActivity {
     private void initWebView(WebView webView) {
 
         WebSettings settings = webView.getSettings();
+
         settings.setJavaScriptEnabled(true);
         settings.setAllowFileAccess(true);
         settings.setDomStorageEnabled(true);
@@ -102,17 +97,16 @@ public class WebViewDemo3Activity extends AppCompatActivity {
                 return true;
             }
         });
-        webView.addJavascriptInterface(this, "up");
         webView.setWebChromeClient(new MyWebChromeClient());
         // webView.setDownloadListener(downloadListener);
     }
 
-    UploadHandler mUploadHandler;
+    SmartWebViewActivity.UploadHandler mUploadHandler;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
 
-        if (requestCode == Controller.FILE_SELECTED) {
+        if (requestCode == SmartWebViewActivity.Controller.FILE_SELECTED) {
             // Chose a file from the file picker.
             if (mUploadHandler != null) {
                 mUploadHandler.onResult(resultCode, intent);
@@ -152,7 +146,7 @@ public class WebViewDemo3Activity extends AppCompatActivity {
         public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
             String newTitle = getTitleFromUrl(url);
 
-            new AlertDialog.Builder(WebViewDemo3Activity.this).setTitle(newTitle).setMessage(message).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            new AlertDialog.Builder(SmartWebViewActivity.this).setTitle(newTitle).setMessage(message).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -168,7 +162,7 @@ public class WebViewDemo3Activity extends AppCompatActivity {
 
             String newTitle = getTitleFromUrl(url);
 
-            new AlertDialog.Builder(WebViewDemo3Activity.this).setTitle(newTitle).setMessage(message).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            new AlertDialog.Builder(SmartWebViewActivity.this).setTitle(newTitle).setMessage(message).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -245,18 +239,13 @@ public class WebViewDemo3Activity extends AppCompatActivity {
         }
     }
 
-    @JavascriptInterface
-    public String getDate() {
-        Toast.makeText(this, "这是一个测试", Toast.LENGTH_SHORT).show();
-        return "sss";
-    }
-
+    ;
 
     class Controller {
         final static int FILE_SELECTED = 4;
 
         Activity getActivity() {
-            return WebViewDemo3Activity.this;
+            return SmartWebViewActivity.this;
         }
     }
 
@@ -339,19 +328,14 @@ public class WebViewDemo3Activity extends AppCompatActivity {
                 File cameraFile = new File(mCameraFilePath);
                 if (cameraFile.exists()) {
                     result = Uri.fromFile(cameraFile);
-//                    result= Uri.parse(ImageFilePath.getImageCompressPath(cameraFile.getPath()));
                     // Broadcast to the media scanner that we have a new photo
                     // so it will be added into the gallery for the user.
                     mController.getActivity().sendBroadcast(
                             new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, result));
                 }
             }
-            //对图片进行压缩
-            if (result != null) {
-                result = BitmapCompressor.bitmp2Uri(BitmapCompressor.getBimapByUri(WebViewDemo3Activity.this, result));
-            }
             mUploadMessage.onReceiveValue(result);//file:///storage/emulated/0/DCIM/browser-photos/1481086839979.jpg
-            System.out.println("result" + result + "mUploadMessage---" + mUploadMessage);
+            System.out.println("result"+result+"mUploadMessage---"+mUploadMessage);
             mHandled = true;
             mCaughtActivityNotFoundException = false;
         }
@@ -449,14 +433,14 @@ public class WebViewDemo3Activity extends AppCompatActivity {
 
         private void startActivity(Intent intent) {
             try {
-                mController.getActivity().startActivityForResult(intent, Controller.FILE_SELECTED);
+                mController.getActivity().startActivityForResult(intent, SmartWebViewActivity.Controller.FILE_SELECTED);
             } catch (ActivityNotFoundException e) {
                 // No installed app was able to handle the intent that
                 // we sent, so fallback to the default file upload control.
                 try {
                     mCaughtActivityNotFoundException = true;
                     mController.getActivity().startActivityForResult(createDefaultOpenableIntent(),
-                            Controller.FILE_SELECTED);
+                            SmartWebViewActivity.Controller.FILE_SELECTED);
                 } catch (ActivityNotFoundException e2) {
                     // Nothing can return us a file, so file upload is effectively disabled.
                     Toast.makeText(mController.getActivity(), "文件选择",
@@ -515,4 +499,3 @@ public class WebViewDemo3Activity extends AppCompatActivity {
         }
     }
 }
-

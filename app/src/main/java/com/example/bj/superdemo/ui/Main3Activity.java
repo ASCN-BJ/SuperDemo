@@ -1,11 +1,19 @@
 package com.example.bj.superdemo.ui;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.bj.superdemo.R;
 import com.example.bj.superdemo.ui.bean.MessageEvent;
+import com.example.bj.superdemo.ui.camera.MyCameraActivity;
 import com.example.bj.superdemo.ui.customview.BigMapActivity;
 import com.example.bj.superdemo.ui.customview.ViewPagerActivity;
 import com.example.bj.superdemo.ui.customview.eventbus.EventBusDemo;
@@ -17,8 +25,10 @@ import com.example.bj.superdemo.ui.customview.view_ui.ShapeDemoActivity;
 import com.example.bj.superdemo.ui.customview.view_ui.VeticalLayoutActivity;
 import com.example.bj.superdemo.ui.mvpdemo_a.views.views.ShowUserData;
 import com.example.bj.superdemo.ui.mvpdemo_b.MvpDemo_b;
+import com.example.bj.superdemo.ui.ui.web_view_demo.BppFragment;
 import com.example.bj.superdemo.ui.ui.web_view_demo.Native2Js;
 import com.example.bj.superdemo.ui.ui.PullToRefreshAndDragToLoadActivity;
+import com.example.bj.superdemo.ui.ui.web_view_demo.SmartWebViewActivity;
 import com.example.bj.superdemo.ui.ui.web_view_demo.WebViewDemo;
 import com.example.bj.superdemo.ui.ui.web_view_demo.WebViewDemo2;
 import com.example.bj.superdemo.ui.ui.web_view_demo.WebViewDemo3Activity;
@@ -37,6 +47,7 @@ public class Main3Activity extends BaseActivity {
     private TextView tv_mvp_demo;
     private TextView tv_mvp_demo_b;
     private TextView tv_web2js;
+    private TextView tv_web_camera;
 
     public void initData() {
         setContentView(R.layout.activity_main3);
@@ -62,6 +73,8 @@ public class Main3Activity extends BaseActivity {
         EventBus.getDefault().register(this);
         tv_web2js = (TextView) findViewById(R.id.tv_web2js);
         tv_web2js.setOnClickListener(this);
+        tv_web_camera = (TextView) findViewById(R.id.tv_web_camera);
+        tv_web_camera.setOnClickListener(this);
     }
 
     @Override
@@ -104,10 +117,28 @@ public class Main3Activity extends BaseActivity {
                 startActivity(new Intent(this, MvpDemo_b.class));
                 break;
             case R.id.tv_web2js:
-                startActivity(new Intent(this, WebViewDemo3Activity.class));
+//                startActivity(new Intent(this, WebViewDemo3Activity.class));
+//                startActivity(new Intent(this, SmartWebViewActivity.class));
+                startActivity(new Intent(this, BppFragment.class));
+//                startActivity(new Intent(this, WebViewDemo2.class));
+                break;
+            case R.id.tv_web_camera:
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 11);
+                } else {
+                    startActivity(new Intent(this, MyCameraActivity.class));
+                }
                 break;
             default:
                 break;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 11) {
+            startActivity(new Intent(this, MyCameraActivity.class));
         }
     }
 
