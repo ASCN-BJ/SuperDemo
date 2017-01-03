@@ -25,6 +25,7 @@ import com.example.bj.superdemo.ui.customview.view_ui.ShapeDemoActivity;
 import com.example.bj.superdemo.ui.customview.view_ui.VeticalLayoutActivity;
 import com.example.bj.superdemo.ui.mvpdemo_a.views.views.ShowUserData;
 import com.example.bj.superdemo.ui.mvpdemo_b.MvpDemo_b;
+import com.example.bj.superdemo.ui.ui.MyDialogActivity;
 import com.example.bj.superdemo.ui.ui.web_view_demo.BppFragment;
 import com.example.bj.superdemo.ui.ui.web_view_demo.Native2Js;
 import com.example.bj.superdemo.ui.ui.PullToRefreshAndDragToLoadActivity;
@@ -48,6 +49,8 @@ public class Main3Activity extends BaseActivity {
     private TextView tv_mvp_demo_b;
     private TextView tv_web2js;
     private TextView tv_web_camera;
+    private TextView tv_web_dialog;
+
 
     public void initData() {
         setContentView(R.layout.activity_main3);
@@ -75,6 +78,8 @@ public class Main3Activity extends BaseActivity {
         tv_web2js.setOnClickListener(this);
         tv_web_camera = (TextView) findViewById(R.id.tv_web_camera);
         tv_web_camera.setOnClickListener(this);
+        tv_web_dialog = (TextView) findViewById(R.id.tv_web_dialog);
+        tv_web_dialog.setOnClickListener(this);
     }
 
     @Override
@@ -128,6 +133,9 @@ public class Main3Activity extends BaseActivity {
                 } else {
                     startActivity(new Intent(this, MyCameraActivity.class));
                 }
+                break;
+            case R.id.tv_web_dialog:
+                startActivity(new Intent(this, MyDialogActivity.class));
                 break;
             default:
                 break;

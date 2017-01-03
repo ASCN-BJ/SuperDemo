@@ -149,6 +149,7 @@
                 android:gravity="center"
                 android:text="webView與JS的交互"
                 android:textSize="28px" />
+
             <TextView
                 android:id="@+id/tv_web_camera"
                 android:layout_width="match_parent"
@@ -157,6 +158,16 @@
                 android:background="@color/shallow_blue"
                 android:gravity="center"
                 android:text="相机"
+                android:textSize="28px" />
+
+            <TextView
+                android:id="@+id/tv_web_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:layout_marginTop="100px"
+                android:background="@color/shallow_blue"
+                android:gravity="center"
+                android:text="DIALOG"
                 android:textSize="28px" />
 
 

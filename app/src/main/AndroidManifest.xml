@@ -104,7 +104,8 @@
             android:name=".ui.camera.MyCameraActivity"
             android:label="@string/title_activity_my_camera"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".ui.ui.MyDialogActivity"></activity>
     </application>
 
 </manifest>

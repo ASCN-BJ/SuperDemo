@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_my_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.bj.superdemo.ui.ui.MyDialogActivity">
+
+    <include layout="@layout/tool_bar_main" />
+
+    <Button
+        android:id="@+id/btn_show_common_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="dialog" />
+    <Button
+        android:id="@+id/btn_customer_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="自定义dialog" />
+    <Button
+        android:id="@+id/btn_customer_dialog2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="自定义dialog2" />
+</LinearLayout>
