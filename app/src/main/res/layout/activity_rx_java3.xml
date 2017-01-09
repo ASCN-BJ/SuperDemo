@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_rx_java3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.bj.superdemo.ui.ui.RxJava3Activity">
+
+    <include layout="@layout/tool_bar_main" />
+
+    <Button
+        android:id="@+id/btn_display_pictures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="display pictures" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcl_show_picture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

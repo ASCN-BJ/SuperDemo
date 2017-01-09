@@ -14,14 +14,22 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="dialog" />
+
     <Button
         android:id="@+id/btn_customer_dialog"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="自定义dialog" />
+
     <Button
         android:id="@+id/btn_customer_dialog2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="自定义dialog2" />
+
+    <Button
+        android:id="@+id/btn_picture_compression"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="图片压缩" />
 </LinearLayout>

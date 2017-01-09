@@ -1,6 +1,10 @@
 package com.example.bj.superdemo.ui.ui;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.os.Handler;
+import android.os.SystemClock;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,15 +24,18 @@ import java.util.List;
  * Created by BJ on 2016/11/15.
  */
 
-public class PullToRefreshAndDragToLoadActivity extends BaseActivity {
+public class PullToRefreshAndDragToLoadActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
     private RecyclerView rl_all;
     private MyAdapter myAdapter;
     private List<Integer> mAllDrawables;
     private List<String> mAllUrls;
+    private SwipeRefreshLayout srl_refresh;
+    private List<Integer> mAllDrawablesAll;
 
     @Override
     public void initData() {
         setContentView(R.layout.activity_pull_to_refresh_and_drag_to_load);
+        mAllDrawablesAll = new ArrayList<>();
         setDrawables();
         LinearLayoutManager layoutManager = new LinearLayoutManager(PullToRefreshAndDragToLoadActivity.this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -36,6 +43,9 @@ public class PullToRefreshAndDragToLoadActivity extends BaseActivity {
         rl_all = (RecyclerView) findViewById(R.id.rl_all);
         rl_all.setAdapter(myAdapter);
         rl_all.setLayoutManager(layoutManager);
+        srl_refresh = (SwipeRefreshLayout) findViewById(R.id.srl_refresh);
+        srl_refresh.setColorSchemeColors(context.getResources().getColor(R.color.bg_dark_green));
+        srl_refresh.setOnRefreshListener(this);
     }
 
     private void setDrawables() {
@@ -55,6 +65,16 @@ public class PullToRefreshAndDragToLoadActivity extends BaseActivity {
     @Override
     public void onClick(View v) {
 
+    }
+
+    @Override
+    public void onRefresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                srl_refresh.setRefreshing(false);//刷新结束
+            }
+        }, 3000);
     }
 
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolde> {

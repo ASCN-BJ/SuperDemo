@@ -23,9 +23,13 @@ import com.example.bj.superdemo.ui.customview.view_ui.DragLeftDeleteListActivity
 import com.example.bj.superdemo.ui.customview.view_ui.GestureLockActivity;
 import com.example.bj.superdemo.ui.customview.view_ui.ShapeDemoActivity;
 import com.example.bj.superdemo.ui.customview.view_ui.VeticalLayoutActivity;
+import com.example.bj.superdemo.ui.multititle.MultiTitleActivity;
 import com.example.bj.superdemo.ui.mvpdemo_a.views.views.ShowUserData;
 import com.example.bj.superdemo.ui.mvpdemo_b.MvpDemo_b;
 import com.example.bj.superdemo.ui.ui.MyDialogActivity;
+import com.example.bj.superdemo.ui.ui.PictureCompressionActivity;
+import com.example.bj.superdemo.ui.ui.RetrofitActivity;
+import com.example.bj.superdemo.ui.ui.RxJavaActivity;
 import com.example.bj.superdemo.ui.ui.web_view_demo.BppFragment;
 import com.example.bj.superdemo.ui.ui.web_view_demo.Native2Js;
 import com.example.bj.superdemo.ui.ui.PullToRefreshAndDragToLoadActivity;
@@ -50,7 +54,10 @@ public class Main3Activity extends BaseActivity {
     private TextView tv_web2js;
     private TextView tv_web_camera;
     private TextView tv_web_dialog;
-
+    private TextView tv_picture_compression;
+    private TextView tv_multi_table;
+    private TextView tv_rx_java;
+    private TextView tv_retrofit;
 
     public void initData() {
         setContentView(R.layout.activity_main3);
@@ -80,6 +87,14 @@ public class Main3Activity extends BaseActivity {
         tv_web_camera.setOnClickListener(this);
         tv_web_dialog = (TextView) findViewById(R.id.tv_web_dialog);
         tv_web_dialog.setOnClickListener(this);
+        tv_picture_compression = (TextView) findViewById(R.id.tv_picture_compression);
+        tv_picture_compression.setOnClickListener(this);
+        tv_multi_table = (TextView) findViewById(R.id.tv_multi_table);
+        tv_multi_table.setOnClickListener(this);
+        tv_rx_java = (TextView) findViewById(R.id.tv_rx_java);
+        tv_rx_java.setOnClickListener(this);
+        tv_retrofit = (TextView) findViewById(R.id.tv_retrofit);
+        tv_retrofit.setOnClickListener(this);
     }
 
     @Override
@@ -136,6 +151,18 @@ public class Main3Activity extends BaseActivity {
                 break;
             case R.id.tv_web_dialog:
                 startActivity(new Intent(this, MyDialogActivity.class));
+                break;
+            case R.id.tv_picture_compression:
+                startActivity(new Intent(this, PictureCompressionActivity.class));
+                break;
+            case R.id.tv_multi_table:
+                startActivity(new Intent(this, MultiTitleActivity.class));
+                break;
+            case R.id.tv_rx_java:
+                startActivity(new Intent(this, RxJavaActivity.class));
+                break;
+            case R.id.tv_retrofit:
+                startActivity(new Intent(this, RetrofitActivity.class));
                 break;
             default:
                 break;

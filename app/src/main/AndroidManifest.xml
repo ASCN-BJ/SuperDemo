@@ -105,7 +105,13 @@
             android:label="@string/title_activity_my_camera"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".ui.ui.MyDialogActivity"></activity>
+        <activity android:name=".ui.ui.MyDialogActivity" />
+        <activity android:name=".ui.ui.PictureCompressionActivity" />
+        <activity android:name=".ui.multititle.MultiTitleActivity" />
+        <activity android:name=".ui.ui.RxJavaActivity" />
+        <activity android:name=".ui.ui.RxJava2Activity" />
+        <activity android:name=".ui.ui.RxJava3Activity" />
+        <activity android:name=".ui.ui.RetrofitActivity"></activity>
     </application>
 
 </manifest>

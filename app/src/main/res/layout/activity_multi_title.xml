@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_multi_title"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.bj.superdemo.ui.multititle.MultiTitleActivity">
+
+    <include layout="@layout/tool_bar_main" />
+
+    <com.example.bj.superdemo.ui.multititle.MultiTitleLayout
+        android:id="@+id/mtl_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.example.bj.superdemo.ui.multititle.MultiTitleLayout>
+</LinearLayout>

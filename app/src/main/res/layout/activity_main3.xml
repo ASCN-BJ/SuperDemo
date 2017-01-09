@@ -170,7 +170,45 @@
                 android:text="DIALOG"
                 android:textSize="28px" />
 
+            <TextView
+                android:id="@+id/tv_picture_compression"
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:layout_marginTop="100px"
+                android:background="@color/shallow_blue"
+                android:gravity="center"
+                android:text="图片压缩"
+                android:textSize="28px" />
 
+            <TextView
+                android:id="@+id/tv_multi_table"
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:layout_marginTop="100px"
+                android:background="@color/shallow_blue"
+                android:gravity="center"
+                android:text="展示栏"
+                android:textSize="28px" />
+
+            <TextView
+                android:id="@+id/tv_rx_java"
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:layout_marginTop="100px"
+                android:background="@color/shallow_blue"
+                android:gravity="center"
+                android:text="RxJava"
+                android:textSize="28px" />
+
+            <TextView
+                android:id="@+id/tv_retrofit"
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:layout_marginTop="100px"
+                android:background="@color/shallow_blue"
+                android:gravity="center"
+                android:text="Retrofit小例子"
+                android:textSize="28px" />
         </LinearLayout>
     </ScrollView>
 

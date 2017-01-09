@@ -1,1 +1,1 @@
-include ':app',':EventBus-master'
+include ':app', ':EventBus-master', ':textlibra'

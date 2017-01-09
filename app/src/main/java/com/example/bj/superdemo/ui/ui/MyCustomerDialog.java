@@ -8,9 +8,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.bj.superdemo.R;
-
-import kotlin.jvm.Throws;
-
 /**
  * Created by bj on 2017-1-3.
  * Description：
