@@ -26,6 +26,7 @@ import com.example.bj.superdemo.ui.customview.view_ui.VeticalLayoutActivity;
 import com.example.bj.superdemo.ui.multititle.MultiTitleActivity;
 import com.example.bj.superdemo.ui.mvpdemo_a.views.views.ShowUserData;
 import com.example.bj.superdemo.ui.mvpdemo_b.MvpDemo_b;
+import com.example.bj.superdemo.ui.ui.CaclActivity;
 import com.example.bj.superdemo.ui.ui.MyDialogActivity;
 import com.example.bj.superdemo.ui.ui.PictureCompressionActivity;
 import com.example.bj.superdemo.ui.ui.RetrofitActivity;
@@ -58,6 +59,7 @@ public class Main3Activity extends BaseActivity {
     private TextView tv_multi_table;
     private TextView tv_rx_java;
     private TextView tv_retrofit;
+    private TextView tv_calc;
 
     public void initData() {
         setContentView(R.layout.activity_main3);
@@ -95,6 +97,8 @@ public class Main3Activity extends BaseActivity {
         tv_rx_java.setOnClickListener(this);
         tv_retrofit = (TextView) findViewById(R.id.tv_retrofit);
         tv_retrofit.setOnClickListener(this);
+        tv_calc = (TextView) findViewById(R.id.tv_calc);
+        tv_calc.setOnClickListener(this);
     }
 
     @Override
@@ -163,6 +167,9 @@ public class Main3Activity extends BaseActivity {
                 break;
             case R.id.tv_retrofit:
                 startActivity(new Intent(this, RetrofitActivity.class));
+                break;
+            case R.id.tv_calc:
+                startActivity(new Intent(this, CaclActivity.class));
                 break;
             default:
                 break;

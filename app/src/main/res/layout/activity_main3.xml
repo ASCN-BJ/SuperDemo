@@ -6,7 +6,7 @@
 
     <include layout="@layout/tool_bar_main" />
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -208,6 +208,16 @@
                 android:background="@color/shallow_blue"
                 android:gravity="center"
                 android:text="Retrofit小例子"
+                android:textSize="28px" />
+
+            <TextView
+                android:id="@+id/tv_calc"
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:layout_marginTop="100px"
+                android:background="@color/shallow_blue"
+                android:gravity="center"
+                android:text="calc"
                 android:textSize="28px" />
         </LinearLayout>
     </ScrollView>

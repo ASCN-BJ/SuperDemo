@@ -111,7 +111,8 @@
         <activity android:name=".ui.ui.RxJavaActivity" />
         <activity android:name=".ui.ui.RxJava2Activity" />
         <activity android:name=".ui.ui.RxJava3Activity" />
-        <activity android:name=".ui.ui.RetrofitActivity"></activity>
+        <activity android:name=".ui.ui.RetrofitActivity" />
+        <activity android:name=".ui.ui.CaclActivity"></activity>
     </application>
 
 </manifest>

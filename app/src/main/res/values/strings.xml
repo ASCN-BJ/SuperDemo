@@ -17,4 +17,5 @@
     <string name="title_activity_web_view_demo2">WebViewDemo2</string>
     <string name="title_activity_web_view_demo3">WebViewDemo3Activity</string>
     <string name="title_activity_my_camera">MyCameraActivity</string>
+    <string name="title_activity_cacl">CaclActivity</string>
 </resources>
