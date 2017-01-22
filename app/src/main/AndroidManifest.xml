@@ -112,7 +112,8 @@
         <activity android:name=".ui.ui.RxJava2Activity" />
         <activity android:name=".ui.ui.RxJava3Activity" />
         <activity android:name=".ui.ui.RetrofitActivity" />
-        <activity android:name=".ui.ui.CaclActivity"></activity>
+        <activity android:name=".ui.ui.CaclActivity" />
+        <activity android:name=".ui.view_pager_mutli_fragment.ViewPagerMutliSelectActivity"></activity>
     </application>
 
 </manifest>

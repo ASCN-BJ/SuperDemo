@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AccountBookLibrary</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="set_network">网络未连接，请检查网络！</string>
+    <string name="enter">进入</string>
+    <string name="loading">加载中...</string>
+    <string name="go_back">返回</string>
+    <string name="money_type">¥</string>
+
+    <!-- 新建企业 -->
+    <string name="add_company">增加企业</string>
+    <string name="basicinfo_please_select_dates">请选择启用日期</string>
+    <string name="basicinfo_please_select_city">请选择城市</string>
+    <string name="basicinfo_please_select_tax_scale">请选择纳税规模</string>
+    <string name="basicinfo_please_select_code">请选择编码格式</string>
+    <string name="credit_code">信用代码：</string>
+    <string name="basicinfo_email">邮&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;箱：</string>
+    <string name="basicinfo_please_input_name">请输入您的姓名</string>
+    <string name="basicinfo_name">记账会计：</string>
+    <string name="save_basic_info">保存信息</string>
+    <string name="basicinfo_please_input_email">请输入您常用的邮箱</string>
+    <string name="baseinfo_date_of_establishment">成立日期：</string>
+    <string name="baseinfo_unitLeader">单位负责人：</string>
+    <string name="code_tpye">编码格式：</string>
+    <string name="please_choose">请选择</string>
+    <string name="basicinfo_dates">启用日期：</string>
+    <string name="basicinfo_companyname">企业名称：</string>
+    <string name="basicinfo_please_input_companyname">请输入您公司的全称</string>
+    <string name="basicinfo_legalperson">法人代表：</string>
+    <string name="basicinfo_registered_capital">注册资金：</string>
+    <string name="basicinfo_registered_address">注册地址：</string>
+    <string name="basicinfo_company_type">公司类型：</string>
+    <string name="basicinfo_operating_range">经营范围：</string>
+    <string name="basicinfo_bank_account">开户银行：</string>
+    <string name="basicinfo_account">账&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;号：</string>
+    <string name="basicinfo_please_input_legalperson">请输入法人代表姓名</string>
+    <string name="basicinfo_please_input_registered_capital">请输入注册资金</string>
+    <string name="basicinfo_please_input_registered_address">请输入注册地址</string>
+    <string name="basicinfo_please_input_company_type">请输入公司类型</string>
+    <string name="basicinfo_please_input_operating_range">请输入经营范围</string>
+    <string name="basicinfo_please_input_bank_account">请输入开户银行</string>
+    <string name="basicinfo_please_input_account">请输入账号</string>
+    <string name="basicinfo_please_input_company_contacts">请输入企业联系人</string>
+    <string name="basicinfo_please_input_company_name">请输入企业名称</string>
+    <string name="basicinfo_tel">电&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;话：</string>
+    <string name="basicinfo_tax_payment_place">国税纳税地址：</string>
+    <string name="basicinfo_admin_phone">管理员及电话：</string>
+    <string name="basicinfo_local_tax_place">地税纳税地点：</string>
+    <string name="basicinfo_income_tax_place">所得税归属地：</string>
+    <string name="basicinfo_please_input_unitLeader">请输入单位负责人</string>
+    <string name="basicinfo_please_input_lister">请输入制表人</string>
+    <string name="basicinfo_approved_taxes">核定税种：</string>
+    <string name="basicinfo_remarks">备注：</string>
+    <string name="basicinfo_company_contacts">企业联系人：</string>
+    <string name="basicinfo_please_input_tel">请输入公司电话或手机号码</string>
+    <string name="basicinfo_please_input_tax_payment_place">请输入国税纳税地址</string>
+    <string name="basicinfo_please_input_admin_phone">请输入管理员及电话</string>
+    <string name="basicinfo_please_input_local_tax_place">请输入地税纳税地点</string>
+    <string name="basicinfo_please_input_income_tax_place">请输入所得税归属地</string>
+    <string name="basicinfo_please_input_approved_taxes">请输入核定税种</string>
+    <string name="basicinfo_please_input_credit_code">请输入信用代码</string>
+    <string name="basicinfo_please_input_remark">请输入备注</string>
+    <string name="basicinfo_trade">所属行业：</string>
+    <string name="basicinfo_city">所在城市：</string>
+    <string name="basicinfo_tax_scale">纳税规模：</string>
+    <string name="basicinfo_search">搜索</string>
+    <string name="basicinfo_search_company">搜索企业</string>
+    <string name="basicinfo_conn_err_msg">网络不可用，请检查你的网络设置。</string>
+    <string name="basicinfo_name_err_msg">请填写2-6字的使用人姓名</string>
+    <string name="basicinfo_orgname_err_msg">公司名称不能超过20个字</string>
+    <string name="basicinfo_legalperson_err_msg">请填写2-6字的企业法人姓名</string>
+    <string name="basicinfo_tel_err_msg">请填写至少11位的电话号码</string>
+    <string name="basicinfo_please_input_orgname">请输入您公司的名称</string>
+    <string name="basicinfo_please_choose_trade">请选择所属行业</string>
+    <string name="basicinfo_please_choose_city">请选择所在城市</string>
+    <string name="basicinfo_please_choose_taxpayer">请选择纳税人</string>
+    <string name="basicinfo_please_choose_time">请选择时间</string>
+    <string name="basicinfo_please_choose_code">请选择科目编码格式</string>
+    <string name="basicinfo_choose_trade">选择行业</string>
+    <string name="basicinfo_choose_city">选择城市</string>
+
+</resources>

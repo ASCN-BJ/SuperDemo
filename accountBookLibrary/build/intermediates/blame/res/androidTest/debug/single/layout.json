@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\view_library_title_bar.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\view_library_title_bar.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\popup_library_delete.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\popup_library_delete.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\toast_library_view.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\toast_library_view.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\popup_library_listview.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\popup_library_listview.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_library_choosecity.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_library_choosecity.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_library_change_company.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_library_change_company.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\item_library_popup_listview.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\item_library_popup_listview.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_library_add_company.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_library_add_company.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\letter_library_list_item.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\letter_library_list_item.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\item_library_change_company.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\item_library_change_company.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\dialog_library_exit_system.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\dialog_library_exit_system.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_library_account_book.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_library_account_book.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_library_choosetrade.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_library_choosetrade.xml"
+    }
+]

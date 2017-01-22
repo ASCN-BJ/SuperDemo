@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TextLibra</string>
+    <string name="app_hello">TextLibra</string>
 </resources>

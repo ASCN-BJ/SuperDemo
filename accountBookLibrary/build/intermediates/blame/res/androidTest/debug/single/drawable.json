@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\ic_launcher.png",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\bg_basicinfo_editor_normal_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\bg_basicinfo_editor_normal_library.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\btn_circle_corner_orange_style_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_circle_corner_orange_style_library.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\org_set_hierarchy_btn_selector_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\org_set_hierarchy_btn_selector_library.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\bg_round_style_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\bg_round_style_library.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\org_set_hierarchy_btn_font_selector_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\org_set_hierarchy_btn_font_selector_library.xml"
+    }
+]

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EventBus-master/EventBus-master.iml" filepath="$PROJECT_DIR$/EventBus-master/EventBus-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/SuperDemo.iml" filepath="$PROJECT_DIR$/SuperDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/accountBookLibrary/accountBookLibrary.iml" filepath="$PROJECT_DIR$/accountBookLibrary/accountBookLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/textlibra/textlibra.iml" filepath="$PROJECT_DIR$/textlibra/textlibra.iml" />
     </modules>

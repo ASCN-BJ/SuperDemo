@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/btn_delete_library"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@null"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:text="编辑"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_height="12dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="3dp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@null"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:text="删除"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+</LinearLayout>

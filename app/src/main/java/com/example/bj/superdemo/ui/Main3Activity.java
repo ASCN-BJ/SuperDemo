@@ -1,13 +1,11 @@
 package com.example.bj.superdemo.ui;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -32,17 +30,12 @@ import com.example.bj.superdemo.ui.ui.PictureCompressionActivity;
 import com.example.bj.superdemo.ui.ui.RetrofitActivity;
 import com.example.bj.superdemo.ui.ui.RxJavaActivity;
 import com.example.bj.superdemo.ui.ui.web_view_demo.BppFragment;
-import com.example.bj.superdemo.ui.ui.web_view_demo.Native2Js;
 import com.example.bj.superdemo.ui.ui.PullToRefreshAndDragToLoadActivity;
-import com.example.bj.superdemo.ui.ui.web_view_demo.SmartWebViewActivity;
-import com.example.bj.superdemo.ui.ui.web_view_demo.WebViewDemo;
-import com.example.bj.superdemo.ui.ui.web_view_demo.WebViewDemo2;
-import com.example.bj.superdemo.ui.ui.web_view_demo.WebViewDemo3Activity;
+import com.example.bj.superdemo.ui.view_pager_mutli_fragment.ViewPagerMutliSelectActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-
 public class Main3Activity extends BaseActivity {
     private TextView tv_my_view_pager;
     private TextView iv_viewp;
@@ -60,6 +53,7 @@ public class Main3Activity extends BaseActivity {
     private TextView tv_rx_java;
     private TextView tv_retrofit;
     private TextView tv_calc;
+    private TextView tv_multi_table_fragment;
 
     public void initData() {
         setContentView(R.layout.activity_main3);
@@ -99,6 +93,8 @@ public class Main3Activity extends BaseActivity {
         tv_retrofit.setOnClickListener(this);
         tv_calc = (TextView) findViewById(R.id.tv_calc);
         tv_calc.setOnClickListener(this);
+        tv_multi_table_fragment = (TextView) findViewById(R.id.tv_multi_table_fragment);
+        tv_multi_table_fragment.setOnClickListener(this);
     }
 
     @Override
@@ -170,6 +166,9 @@ public class Main3Activity extends BaseActivity {
                 break;
             case R.id.tv_calc:
                 startActivity(new Intent(this, CaclActivity.class));
+                break;
+            case R.id.tv_multi_table_fragment:
+                startActivity(new Intent(this, ViewPagerMutliSelectActivity.class));
                 break;
             default:
                 break;

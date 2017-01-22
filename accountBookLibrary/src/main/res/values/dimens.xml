@@ -1,0 +1,115 @@
+<resources>
+
+    <!-- pxx -->
+    <dimen name="px1">1px</dimen>
+    <dimen name="px2">2px</dimen>
+    <dimen name="px3">3px</dimen>
+    <dimen name="px4">4px</dimen>
+    <dimen name="px5">5px</dimen>
+    <dimen name="px6">6px</dimen>
+    <dimen name="px7">7px</dimen>
+    <dimen name="px8">8px</dimen>
+    <dimen name="px9">9px</dimen>
+    <dimen name="px10">10px</dimen>
+    <dimen name="px11">11px</dimen>
+    <dimen name="px12">12px</dimen>
+    <dimen name="px13">13px</dimen>
+    <dimen name="px15">15px</dimen>
+    <dimen name="px14">14px</dimen>
+    <dimen name="px16">16px</dimen>
+    <dimen name="px17">17px</dimen>
+    <dimen name="px18">18px</dimen>
+    <dimen name="px19">19px</dimen>
+    <dimen name="px20">20px</dimen>
+
+    <!-- spx -->
+    <dimen name="sp1">1sp</dimen>
+    <dimen name="sp2">2sp</dimen>
+    <dimen name="sp3">3sp</dimen>
+    <dimen name="sp4">4sp</dimen>
+    <dimen name="sp5">5sp</dimen>
+    <dimen name="sp6">6sp</dimen>
+    <dimen name="sp7">7sp</dimen>
+    <dimen name="sp8">8sp</dimen>
+    <dimen name="sp9">9sp</dimen>
+    <dimen name="sp10">10sp</dimen>
+    <dimen name="sp11">11sp</dimen>
+    <dimen name="sp12">12sp</dimen>
+    <dimen name="sp13">13sp</dimen>
+    <dimen name="sp15">15sp</dimen>
+    <dimen name="sp14">14sp</dimen>
+    <dimen name="sp16">16sp</dimen>
+    <dimen name="sp17">17sp</dimen>
+    <dimen name="sp18">18sp</dimen>
+    <dimen name="sp19">19sp</dimen>
+    <dimen name="sp20">20sp</dimen>
+    <dimen name="sp30">30sp</dimen>
+    <dimen name="sp40">40sp</dimen>
+    <dimen name="sp45">45sp</dimen>
+    <dimen name="sp50">50sp</dimen>
+
+    <!-- dpx -->
+    <dimen name="spacing_0">0dp</dimen>
+    <dimen name="spacing_1">1dp</dimen>
+    <dimen name="spacing_2">2dp</dimen>
+    <dimen name="spacing_3">3dp</dimen>
+    <dimen name="spacing_4">4dp</dimen>
+    <dimen name="spacing_5">5dp</dimen>
+    <dimen name="spacing_6">6dp</dimen>
+    <dimen name="spacing_7">7dp</dimen>
+    <dimen name="spacing_8">8dp</dimen>
+    <dimen name="spacing_9">9dp</dimen>
+    <dimen name="spacing_10">10dp</dimen>
+    <dimen name="spacing_11">11dp</dimen>
+    <dimen name="spacing_12">12dp</dimen>
+    <dimen name="spacing_13">13dp</dimen>
+    <dimen name="spacing_14">14dp</dimen>
+    <dimen name="spacing_15">15dp</dimen>
+    <dimen name="spacing_16">16dp</dimen>
+    <dimen name="spacing_17">17dp</dimen>
+    <dimen name="spacing_18">18dp</dimen>
+    <dimen name="spacing_19">19dp</dimen>
+    <dimen name="spacing_20">20dp</dimen>
+    <dimen name="spacing_24">24dp</dimen>
+    <dimen name="spacing_25">25dp</dimen>
+    <dimen name="spacing_30">30dp</dimen>
+    <dimen name="spacing_35">35dp</dimen>
+    <dimen name="spacing_40">40dp</dimen>
+    <dimen name="spacing_45">45dp</dimen>
+    <dimen name="spacing_50">50dp</dimen>
+    <dimen name="spacing_55">55dp</dimen>
+    <dimen name="spacing_60">60dp</dimen>
+    <dimen name="spacing_65">65dp</dimen>
+    <dimen name="spacing_70">70dp</dimen>
+    <dimen name="spacing_71">71dp</dimen>
+    <dimen name="spacing_72">72dp</dimen>
+    <dimen name="spacing_75">75dp</dimen>
+    <dimen name="spacing_80">80dp</dimen>
+    <dimen name="spacing_85">85dp</dimen>
+    <dimen name="spacing_90">90dp</dimen>
+    <dimen name="spacing_95">95dp</dimen>
+    <dimen name="spacing_100">100dp</dimen>
+    <dimen name="spacing_105">105dp</dimen>
+    <dimen name="spacing_110">110dp</dimen>
+    <dimen name="spacing_120">120dp</dimen>
+    <dimen name="spacing_130">130dp</dimen>
+    <dimen name="spacing_140">140dp</dimen>
+    <dimen name="spacing_150">150dp</dimen>
+    <dimen name="spacing_160">160dp</dimen>
+    <dimen name="spacing_170">170dp</dimen>
+    <dimen name="spacing_180">180dp</dimen>
+    <dimen name="spacing_190">190dp</dimen>
+    <dimen name="spacing_200">200dp</dimen>
+    <dimen name="spacing_250">250dp</dimen>
+    <dimen name="spacing_300">300dp</dimen>
+    <dimen name="spacing_400">400dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="indicator_internal_padding">4dp</dimen>
+    <dimen name="indicator_right_padding">10dp</dimen>
+    
+    <!--  add -->
+    <dimen name="divide_height">1dp</dimen>
+
+</resources>

@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_popup_dir_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_popup_dir_library.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_popup_dir_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_popup_dir_library.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_top_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_top_library.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\loadmore_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\anim\\loadmore_library.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\popupwindow_exit_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\anim\\popupwindow_exit_library.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\popupwindow_enter_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\anim\\popupwindow_enter_library.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom_library.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_bottom_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_bottom_library.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_top_library.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_top_library.xml"
+    }
+]

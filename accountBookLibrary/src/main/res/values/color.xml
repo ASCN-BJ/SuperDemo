@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 暗示颜色 -->
+    <color name="common_hint_color">#acacac</color>
+    <!-- 文字颜色 -->
+    <color name="common_text_color">#525151</color>
+    <!-- 主题橘色 -->
+    <color name="common_orange">#f26c4f</color>
+    <!-- 主题蓝色 -->
+    <color name="common_blue">#0088ff</color>
+    <color name="home_rank_red">#d8524f</color>
+    <color name="btn_orange">#e58b21</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="home_line">#e7e7e7</color>
+    <color name="text_b1b1b1">#B1B1B1</color>
+</resources>
