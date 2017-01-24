@@ -4,31 +4,43 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.ViewGroup;
+
+import com.example.bj.superdemo.ui.customview.gallery_picture.WaterFallFragment;
+import com.example.bj.superdemo.ui.customview.gallery_picture.WaterFallFragment2;
 
 import java.util.List;
 
 /**
  * Created by Administrator on 2017/1/22.
+ *
  */
 
 public class MutliTabAdapter extends FragmentPagerAdapter {
-    public final int COUNT = 5;
-    private String[] titles = new String[]{"Tab1", "Tab2", "Tab3", "Tab4", "Tab5"};
+    private String[] titles = new String[]{};
+//    private String[] titles = new String[]{"Tab1", "Tab2","Tab3"};
     private Context context;
-
-    public MutliTabAdapter(FragmentManager fm, Context context) {
+    private  List<Fragment> mLists;
+    public MutliTabAdapter(FragmentManager fm, Context context, String[] titles, List<Fragment> mLists) {
         super(fm);
+        this.titles=titles;
         this.context = context;
+        this.mLists=mLists;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return PageFragment.newInstance(position + 1);
+        return WaterFallFragment2.newInstance(position + 1);
+//        return mLists.get(position);
     }
-
+//
+//    @Override
+//    public void destroyItem(ViewGroup container, int position, Object object) {
+//        super.destroyItem(container, position, object);
+//    }
     @Override
     public int getCount() {
-        return COUNT;
+        return titles.length;
     }
 
     @Override

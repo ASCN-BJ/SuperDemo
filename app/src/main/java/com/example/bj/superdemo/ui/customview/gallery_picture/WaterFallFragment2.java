@@ -3,6 +3,7 @@ package com.example.bj.superdemo.ui.customview.gallery_picture;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
@@ -17,34 +18,41 @@ import com.bumptech.glide.Glide;
 import com.example.bj.superdemo.R;
 import com.example.bj.superdemo.ui.customview.common.DividerItemDecoration;
 import com.example.bj.superdemo.ui.customview.common.MyRecycleItemDecoder;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by bj on 2016/10/8.
- * description：瀑布流
+ * Created by Administrator on 2017/1/23.
  */
-public class WaterFallFragment extends Fragment {
 
+public class WaterFallFragment2 extends Fragment {
     private RecyclerView rv_water_fall;
     private List<Integer> mLists;
     private int drawableId;
-    private WaterFallAdatper mAdapter;
+    private WaterFallFragment2.WaterFallAdatper mAdapter;
     private MyRecycleItemDecoder myRecycleItemDecoder;
-
+    private LinearLayout ll_show_loading;
+    private Handler mHandler;
     public static Fragment newInstance(int page) {
-//        Bundle args = new Bundle();
-//
-//        args.putInt(ARGS_PAGE, page);
         Fragment fragment = new WaterFallFragment();
-//        fragment.setArguments(args);
         return fragment;
     }
+
+    private Runnable LOAD_DATA = new Runnable() {
+        @Override
+        public void run() {
+            //在这里数据内容加载到Fragment上
+            ll_show_loading.setVisibility(View.GONE);
+            showList();
+        }
+    };
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_water_fall, null);
+        mHandler=new Handler();
+        return inflater.inflate(R.layout.fragment_water_fall2, null);
     }
 
     @Override
@@ -52,13 +60,19 @@ public class WaterFallFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setDrawableResouces(view);
         rv_water_fall = (RecyclerView) view.findViewById(R.id.rv_water_fall);
-//        myRecycleItemDecoder = new MyRecycleItemDecoder(this.getActivity());
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
-//        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-//        rv_water_fall.setLayoutManager(layoutManager);
+        ll_show_loading= (LinearLayout) view.findViewById(R.id.ll_show_loading);
+        ll_show_loading.setVisibility(View.VISIBLE);
+        mHandler.postDelayed(LOAD_DATA,3000);
+    }
 
-//        GridLayoutManager layoutManager = new GridLayoutManager(this.getActivity(), 3);
-//        layoutManager.setOrientation(GridLayoutManager.VERTICAL);
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if(!isVisibleToUser)
+        mHandler.removeCallbacks(LOAD_DATA);
+    }
+
+    private void showList() {
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
 //        layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
         rv_water_fall.setLayoutManager(layoutManager);
@@ -67,7 +81,7 @@ public class WaterFallFragment extends Fragment {
         rv_water_fall.addItemDecoration(new DividerItemDecoration(this.getActivity(), DividerItemDecoration.HORIZONTAL_LIST));
 
 //        rv_water_fall.addItemDecoration(new MyRecycleItemDecoder(this.getActivity()));
-        mAdapter = new WaterFallAdatper(this.getActivity(), mLists);
+        mAdapter = new WaterFallFragment2.WaterFallAdatper(this.getActivity(), mLists);
 //        rv_water_fall.setItemAnimator(new DefaultItemAnimator());
 //        rv_water_fall.addItemDecoration(new RecyclerView.ItemDecoration() {});
         rv_water_fall.setAdapter(mAdapter);
@@ -82,7 +96,7 @@ public class WaterFallFragment extends Fragment {
         rv_water_fall = (RecyclerView) view.findViewById(R.id.rv_water_fall);
     }
 
-    class WaterFallAdatper extends RecyclerView.Adapter<MyViewHolder> {
+    class WaterFallAdatper extends RecyclerView.Adapter<WaterFallFragment2.MyViewHolder> {
         private List<Integer> mHeightSizes;
         private Context mContext;
         private List<Integer> mList;
@@ -97,12 +111,12 @@ public class WaterFallFragment extends Fragment {
         }
 
         @Override
-        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return MyViewHolder.newInstance(mContext, parent, mHeightSizes);
+        public WaterFallFragment2.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            return WaterFallFragment2.MyViewHolder.newInstance(mContext, parent, mHeightSizes);
         }
 
         @Override
-        public void onBindViewHolder(MyViewHolder holder, int position) {
+        public void onBindViewHolder(WaterFallFragment2.MyViewHolder holder, int position) {
 //            holder.image.
 //            holder.image.setImageResource(mList.get(position));
 //            MyImageLoader.showImage("drawable://" + mList.get(position), holder.image);
@@ -127,7 +141,7 @@ public class WaterFallFragment extends Fragment {
 
         private ImageView image;
 
-        public static MyViewHolder newInstance(Context context, ViewGroup parent, List<Integer> mLists) {
+        public static WaterFallFragment2.MyViewHolder newInstance(Context context, ViewGroup parent, List<Integer> mLists) {
             View view = LayoutInflater.from(context).inflate(R.layout.item_gallery, parent, false);
             ViewGroup.LayoutParams params = view.getLayoutParams();
             params.height = (int) ((Math.random() + 0.5) * 400);
@@ -136,7 +150,7 @@ public class WaterFallFragment extends Fragment {
             view.setPadding(0, 0, 0, 0);
             view.setLayoutParams(params);
             view.setBackgroundColor(Color.WHITE);
-            return (new MyViewHolder(view));
+            return (new WaterFallFragment2.MyViewHolder(view));
         }
     }
 }

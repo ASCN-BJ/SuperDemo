@@ -24,12 +24,12 @@
         "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_library_change_company.xml"
     },
     {
-        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\item_library_popup_listview.xml",
-        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\item_library_popup_listview.xml"
-    },
-    {
         "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_library_add_company.xml",
         "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_library_add_company.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\item_library_popup_listview.xml",
+        "source": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\item_library_popup_listview.xml"
     },
     {
         "merged": "E:\\Android\\work\\superdemo\\SuperDemo\\accountBookLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\letter_library_list_item.xml",

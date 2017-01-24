@@ -226,7 +226,7 @@
                 android:layout_marginTop="100px"
                 android:background="@color/shallow_blue"
                 android:gravity="center"
-                android:text="calc"
+                android:text="多标签栏目"
                 android:textSize="28px" />
         </LinearLayout>
     </ScrollView>
